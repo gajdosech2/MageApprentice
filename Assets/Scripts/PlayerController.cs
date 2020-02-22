@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
 
     string axis;
     float move_speed = 5.0f;
-    float rotation_speed = 80.0f;
-    float jump_speed = 11.0f;
+    float rotation_speed = 90.0f;
+    float jump_speed = 10.0f;
     float gravity = 17.0f;
     float distance_to_ground = 0.0f;
 

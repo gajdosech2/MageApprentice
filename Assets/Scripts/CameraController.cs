@@ -2,27 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     public Transform target;
+    public PlayerController player;
     private Vector3 offset;
+    float distance;
 
-    // Start is called before the first frame update
     void Start()
     {
         offset = target.transform.position - transform.position;
+        distance = offset.magnitude;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        Vector3 target_position = target.transform.position + new Vector3(0, 1.25f, 0);
         Quaternion rotation = Quaternion.Euler(0, target.transform.eulerAngles.y, 0);
         transform.position = target.transform.position - (rotation * offset);
-        transform.LookAt(target.transform.position + new Vector3(0, 1, 0));
-    }
+        transform.LookAt(target_position);
 
-    void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Hello World");
+        RaycastHit hit;
+        if (Physics.Raycast(target_position, transform.position - target_position, out hit, distance))
+        {
+            transform.position = hit.point;
+            transform.position -= (transform.position - target_position) * 0.25f;
+        }
     }
 }
