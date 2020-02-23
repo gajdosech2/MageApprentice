@@ -18564,6 +18564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 101738461873781255}
   - component: {fileID: 6059615586723232478}
+  - component: {fileID: 5094660700898397004}
   m_Layer: 0
   m_Name: White Orb
   m_TagString: Pickup
@@ -18605,6 +18606,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5094660700898397004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107864117878148941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283b3a621aa757b4fb7aa95d2d728977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
 --- !u!1 &107931699359803155
 GameObject:
   m_ObjectHideFlags: 0

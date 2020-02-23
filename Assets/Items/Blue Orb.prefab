@@ -23184,7 +23184,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.23529409, g: 0.5901143, b: 0.99215686, a: 1}
-  m_Intensity: 0.75
+  m_Intensity: 0.9
   m_Range: 3
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -23221,6 +23221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 815486266660983920}
   - component: {fileID: 6782516294995170473}
+  - component: {fileID: 5790771061874447101}
   m_Layer: 0
   m_Name: Blue Orb
   m_TagString: Pickup
@@ -23262,6 +23263,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5790771061874447101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812749306515808570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283b3a621aa757b4fb7aa95d2d728977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 10
 --- !u!1 &812766338754314192
 GameObject:
   m_ObjectHideFlags: 0

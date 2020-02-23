@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool mouse = false;
-    public bool rotation_disable = false;
-
+    bool mouse = false;
     string axis;
     float move_speed = 5.0f;
-    float rotation_speed = 90.0f;
+    float rotation_speed = 110.0f;
     float jump_speed = 10.0f;
     float gravity = 17.0f;
     float distance_to_ground = 0.0f;
@@ -22,13 +20,14 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         axis = mouse ? "Mouse X" : "Horizontal";
+        Cursor.visible = false;
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         collider = GetComponent<Collider>();
         distance_to_ground = collider.bounds.extents.y;
     }
 
-    bool IsGrounded()
+    bool IsAnimationGrounded()
     {
         if (controller.isGrounded)
         {
@@ -44,9 +43,9 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
-    void DetermineState()
+    void Animation()
     {
-        if (IsGrounded() || Time.time < 0.5f) 
+        if (IsAnimationGrounded() || Time.time < 0.5f) 
         {
             if (Mathf.Abs(move_direction.x) < 0.1f && Mathf.Abs(move_direction.z) < 0.1f)
             {
@@ -65,31 +64,33 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        if (IsGrounded())
+        if (controller.isGrounded)
         {
-            move_direction = Vector3.zero;
-            if (Input.GetKey(KeyCode.W))
+            move_direction.y = 0;
+            if (Input.GetButtonDown("Jump"))
             {
-                move_direction = controller.transform.forward * move_speed;
+                move_direction.y += jump_speed;
             }
-            if (Input.GetKey(KeyCode.Space))
-            {
-                move_direction.y = jump_speed;
-            }
+        }
+
+        move_direction.x = 0;
+        move_direction.z = 0;
+        if (Input.GetAxisRaw("Vertical") > 0)
+        {
+            move_direction.x = (controller.transform.forward * move_speed).x;
+            move_direction.z = (controller.transform.forward * move_speed).z;
         }
 
         move_direction.y -= gravity * Time.deltaTime;
         controller.Move(move_direction * Time.deltaTime);
 
-        if (!rotation_disable)
-        {
-            controller.transform.Rotate(new Vector3(0, Input.GetAxis(axis), 0) * rotation_speed * Time.deltaTime);
-        }
+        controller.transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * rotation_speed * Time.deltaTime);
+        controller.transform.Rotate(new Vector3(0, Input.GetAxis("Horizontal"), 0) * rotation_speed * Time.deltaTime);
     }
 
     void Update()
     {
         Move();
-        DetermineState();
+        Animation();
     }
 }

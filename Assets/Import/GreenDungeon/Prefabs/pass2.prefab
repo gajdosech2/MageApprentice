@@ -89,7 +89,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30, y: 23, z: 20}
+  m_Size: {x: 30, y: 23, z: 15}
   m_Center: {x: -5, y: 11.5, z: 0.000000834465}
 --- !u!1 &100002
 GameObject:
@@ -180,7 +180,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30, y: 23, z: 20}
+  m_Size: {x: 30, y: 23, z: 15}
   m_Center: {x: 4.9999995, y: 11.5, z: -0.0000056028366}
 --- !u!1 &100004
 GameObject:
@@ -308,7 +308,7 @@ MeshCollider:
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
-  m_Mesh: {fileID: 4300158, guid: 264cb9d00f961fc4a846e4e44177aa66, type: 3}
+  m_Mesh: {fileID: 4300340, guid: 264cb9d00f961fc4a846e4e44177aa66, type: 3}
 --- !u!1 &100008
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +327,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &400008
 Transform:
   m_ObjectHideFlags: 0
