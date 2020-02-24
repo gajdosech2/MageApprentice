@@ -170,7 +170,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8afa8552003222947baff52a0a63c8fe, type: 3}
     m_FontSize: 48
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 64
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.07794358, b: 0.509434, a: 1}
+  m_Color: {r: 0, g: 0.07794358, b: 0.50980395, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -675,7 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca15653794ddd8540b95babbb12ec144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: FirstLevel
+  level: IntroLevel
   score: {fileID: 634995810}
   time: {fileID: 1297767792}
 --- !u!4 &1345026289
@@ -847,7 +847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5188679, g: 0, b: 0.06428448, a: 1}
+  m_Color: {r: 0.50980395, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
