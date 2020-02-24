@@ -31,6 +31,6 @@ public class PlayerCollector : MonoBehaviour
 
 	void OnDestroy()
 	{
-		ManagerGame.last_level_time = Time.timeSinceLevelLoad;
+		ManagerGame.total_time = (int)Time.time;
 	}
 }

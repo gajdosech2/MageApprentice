@@ -6,7 +6,7 @@ using UnityEngine;
 public class ManagerGame : MonoBehaviour
 {
     public static int total_score = 0;
-    public static float last_level_time = 0;
+    public static int total_time = 0;
 
     public string level = "FirstLevel";
     public Text score;
@@ -14,7 +14,7 @@ public class ManagerGame : MonoBehaviour
 
     void Start()
     {
-        Invoke("Level", 5.0f);
+        Invoke("Level", 7.5f);
     }
 
     void Update()
@@ -25,14 +25,14 @@ public class ManagerGame : MonoBehaviour
         }
         if (time != null)
         {
-            time.text = last_level_time.ToString() + "s";
+            time.text = total_time.ToString() + "s";
         }
     }
 
     void Level()
     {
         total_score = 0;
-        last_level_time = 0;
+        total_time = 0;
         Application.LoadLevel(level);
     }
 }
