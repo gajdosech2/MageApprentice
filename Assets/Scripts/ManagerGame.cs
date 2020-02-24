@@ -14,7 +14,6 @@ public class ManagerGame : MonoBehaviour
 
     void Start()
     {
-
         Invoke("Level", 5.0f);
     }
 

@@ -9,7 +9,10 @@ public class PlayerCollector : MonoBehaviour
 
 	void Start()
     {
-		score_text.text = "0";
+		if (score_text != null)
+        {
+			score_text.text = ManagerGame.total_score.ToString();
+		}
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -19,7 +22,10 @@ public class PlayerCollector : MonoBehaviour
 			other.gameObject.SetActive(false);
 			ManagerGame.total_score += other.gameObject.GetComponent<PickupScore>().value;
 			ManagerGame.total_score = Mathf.Max(ManagerGame.total_score, 0);
-			score_text.text = ManagerGame.total_score.ToString();
+			if (score_text != null)
+            {
+				score_text.text = ManagerGame.total_score.ToString();
+			}
 		}
 	}
 

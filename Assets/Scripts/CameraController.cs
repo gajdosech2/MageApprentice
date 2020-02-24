@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform target;
-    public PlayerController player;
     private Vector3 offset;
     float distance;
 
