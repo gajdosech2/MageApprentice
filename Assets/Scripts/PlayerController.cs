@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     bool mouse = false;
-    string axis;
     float move_speed = 5.0f;
     float rotation_speed = 110.0f;
     float jump_speed = 10.0f;
@@ -19,7 +18,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        axis = mouse ? "Mouse X" : "Horizontal";
         Cursor.visible = false;
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
@@ -88,7 +86,7 @@ public class PlayerController : MonoBehaviour
         controller.transform.Rotate(new Vector3(0, Input.GetAxis("Horizontal"), 0) * rotation_speed * Time.deltaTime);
     }
 
-    void FixedUpdate()
+    void Update()
     {
         Move();
         Animation();
