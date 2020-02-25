@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         if (controller.isGrounded)
         {
             move_direction.y = 0;
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButton("Jump"))
             {
                 move_direction.y += jump_speed;
             }
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
         controller.transform.Rotate(new Vector3(0, Input.GetAxis("Horizontal"), 0) * rotation_speed * Time.deltaTime);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Move();
         Animation();

@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
         distance = offset.magnitude;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 target_position = target.transform.position + new Vector3(0, 1.2f, 0);
         Quaternion rotation = Quaternion.Euler(0, target.transform.eulerAngles.y, 0);
