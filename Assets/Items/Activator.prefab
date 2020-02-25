@@ -42,7 +42,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0, g: 0.7466059, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 1
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -98,7 +98,7 @@ Transform:
   m_GameObject: {fileID: 1331992011732030074}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 10.52, y: 4.853, z: -9.788}
-  m_LocalScale: {x: 0.05, y: 0.5, z: 0.05}
+  m_LocalScale: {x: 0.050000045, y: 0.50000024, z: 0.05000003}
   m_Children:
   - {fileID: 1331992010604405307}
   m_Father: {fileID: 0}
@@ -160,8 +160,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &5796738901199270130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,3 +188,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroy: 0

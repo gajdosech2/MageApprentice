@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 452808}
   - component: {fileID: 3397562}
   - component: {fileID: 2362562}
+  - component: {fileID: 1365606535}
   m_Layer: 0
-  m_Name: Gate_Right005
+  m_Name: Gate_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101298}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 353.7131, y: 5.997021, z: -35.04168}
+  m_LocalPosition: {x: -0.01, y: -3.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 419882}
@@ -77,6 +78,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1365606535
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.246406, y: 0.687793, z: 5.567875}
+  m_Center: {x: 1.1230175, y: 0.42869636, z: -2.055253}
 --- !u!1 &135988
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +102,7 @@ GameObject:
   - component: {fileID: 445618}
   - component: {fileID: 3344302}
   - component: {fileID: 2398540}
+  - component: {fileID: 56838802}
   m_Layer: 0
   m_Name: Gate_Left
   m_TagString: Untagged
@@ -103,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135988}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 353.7131, y: 5.997021, z: -35.04168}
+  m_LocalPosition: {x: 0.01, y: -3.28, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 419882}
@@ -154,6 +169,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &56838802
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135988}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2464063, y: 0.687793, z: 5.567875}
+  m_Center: {x: -1.1413926, y: 0.42869636, z: -2.055253}
 --- !u!1 &148104
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +193,7 @@ GameObject:
   - component: {fileID: 410188}
   - component: {fileID: 3306778}
   - component: {fileID: 2370970}
+  - component: {fileID: 274415277}
   m_Layer: 0
   m_Name: Fortress_Gate
   m_TagString: Untagged
@@ -179,8 +208,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148104}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 353.75146, y: 9.2610655, z: -34.536263}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 419882}
@@ -231,6 +260,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &274415277
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300008, guid: 55c0d5033699c5a4abecb1c3da0ca857, type: 3}
 --- !u!1 &165492
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 419882}
   - component: {fileID: 9509196}
+  - component: {fileID: 709295757}
   m_Layer: 0
   m_Name: Fortress Gate
   m_TagString: Untagged
@@ -257,7 +301,7 @@ Transform:
   m_GameObject: {fileID: 165492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 410188}
   - {fileID: 445618}
@@ -274,8 +318,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165492}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 55c0d5033699c5a4abecb1c3da0ca857, type: 3}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4c315126c68a3df4bb1ff7dd13e3898c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -284,3 +328,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &709295757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b16d2559b818e4b90274274e6428d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  to_activate:
+  - {fileID: 0}
+  to_hide: []
