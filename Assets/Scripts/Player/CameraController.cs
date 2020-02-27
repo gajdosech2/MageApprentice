@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
         distance = offset.magnitude;
     }
 
-    void Update()
+    void LateUpdate()
     {
         Vector3 target_position = target.transform.position + new Vector3(0, 1.2f, 0);
         Quaternion rotation = Quaternion.Euler(0, target.transform.eulerAngles.y, 0);
@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
         transform.LookAt(target_position);
 
         RaycastHit hit;
-        if (Physics.Raycast(target_position, transform.position - target_position, out hit, distance))
+        if (Physics.Raycast(target_position, transform.position - target_position, out hit, distance, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
         {
             transform.position = hit.point;
             transform.position -= (transform.position - target_position) * 0.1f;

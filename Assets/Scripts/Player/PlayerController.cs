@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    bool mouse = false;
-    float move_speed = 5.0f;
-    float rotation_speed = 110.0f;
-    float jump_speed = 10.0f;
-    float gravity = 17.0f;
     float distance_to_ground = 0.0f;
 
-    Vector3 move_direction = Vector3.zero;
-    Vector3 rotation_vector = Vector3.zero;
+    [HideInInspector]
+    public Vector3 rotation_vector = Vector3.zero;
+    [HideInInspector]
+    public Vector3 move_direction = Vector3.zero;
+
     CharacterController controller;
     Animator animator;
     Collider collider;
@@ -56,36 +54,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Move()
+    void LateUpdate()
     {
-        if (controller.isGrounded)
-        {
-            move_direction.y = 0;
-            if (Input.GetButtonDown("Jump"))
-            {
-                move_direction.y += jump_speed;
-            }
-        }
-
-        move_direction.x = 0;
-        move_direction.z = 0;
-        if (Input.GetAxisRaw("Vertical") > 0)
-        {
-            move_direction.x = (controller.transform.forward * move_speed).x;
-            move_direction.z = (controller.transform.forward * move_speed).z;
-        }
-
-        move_direction.y -= gravity * Time.deltaTime;
-
-        controller.Move(move_direction * Time.deltaTime);
-
-        rotation_vector.y = Input.GetAxis("Mouse X") + Input.GetAxis("Horizontal");
-        controller.transform.Rotate(rotation_vector * rotation_speed * Time.deltaTime);
-    }
-
-    void Update()
-    {
-        Move();
         Animation();
     }
 }
