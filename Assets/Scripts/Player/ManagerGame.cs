@@ -7,7 +7,7 @@ public class ManagerGame : MonoBehaviour
 {
     public static int total_score = 0;
     public static int total_time = 0;
-    static int last_run_time = 0;
+    static int last_time = 0;
 
     public string level = "Menu";
     public Text score;
@@ -15,8 +15,8 @@ public class ManagerGame : MonoBehaviour
 
     void Start()
     {
-        total_time = (int)Time.time - last_run_time;
-        last_run_time = total_time;
+        total_time = (int)Time.time - last_time;
+        last_time = (int)Time.time;
         Invoke("Level", 7.5f);
     }
 

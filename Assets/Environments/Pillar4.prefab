@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1259477101567251751}
+  - component: {fileID: 794156396090244185}
   m_Layer: 0
   m_Name: Pillar4
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &794156396090244185
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7219854503727082193}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 4, z: 1.5}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &6964882938991656951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -182,7 +196,9 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.065
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 84e74dc868fac0448aaf978f9e82f4b2, type: 3}
+    - {fileID: 6400000, guid: 84e74dc868fac0448aaf978f9e82f4b2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 84e74dc868fac0448aaf978f9e82f4b2, type: 3}
 --- !u!4 &6964882939930255813 stripped
 Transform:

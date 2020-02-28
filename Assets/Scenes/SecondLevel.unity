@@ -1696,16 +1696,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1775139941}
     m_Modifications:
-    - target: {fileID: 1432562408717271568, guid: 8eb4af8f4d3085a4eb3b28a8364a29bc,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1432562408717271568, guid: 8eb4af8f4d3085a4eb3b28a8364a29bc,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4200979557202229161, guid: 8eb4af8f4d3085a4eb3b28a8364a29bc,
         type: 3}
       propertyPath: m_Name
@@ -8271,29 +8261,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 1775139941}
     m_Modifications:
     - target: {fileID: 1009886595, guid: 05b7183578091b544bba7bd19a85fc79, type: 3}
-      propertyPath: OnActivate.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1009886595, guid: 05b7183578091b544bba7bd19a85fc79, type: 3}
-      propertyPath: OnActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1009886595, guid: 05b7183578091b544bba7bd19a85fc79, type: 3}
-      propertyPath: OnActivate.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1009886595, guid: 05b7183578091b544bba7bd19a85fc79, type: 3}
       propertyPath: OnActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 390160730}
-    - target: {fileID: 1009886595, guid: 05b7183578091b544bba7bd19a85fc79, type: 3}
-      propertyPath: OnActivate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Done
-      objectReference: {fileID: 0}
-    - target: {fileID: 1009886595, guid: 05b7183578091b544bba7bd19a85fc79, type: 3}
-      propertyPath: OnActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8761648313372596811, guid: 05b7183578091b544bba7bd19a85fc79,
         type: 3}
       propertyPath: m_LocalPosition.x

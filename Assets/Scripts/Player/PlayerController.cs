@@ -60,6 +60,10 @@ public class PlayerController : MonoBehaviour
 
     void LateUpdate()
     {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Application.LoadLevel("Menu");
+        }
         Animation();
     }
 }

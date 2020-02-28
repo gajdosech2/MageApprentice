@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerCollector : MonoBehaviour
 {
 	public Text score_text;
+	public int level_score = 0;
 
 	void Start()
     {
@@ -19,7 +20,9 @@ public class PlayerCollector : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("Pickup"))
 		{
-			ManagerGame.total_score += other.gameObject.GetComponent<PickupScore>().value;
+			int score = other.gameObject.GetComponent<PickupScore>().value;
+			level_score += score;
+			ManagerGame.total_score += score;
 			ManagerGame.total_score = Mathf.Max(ManagerGame.total_score, 0);
 			if (score_text != null)
             {

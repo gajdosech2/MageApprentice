@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FourthLevel.unity
     guid: d2d50c03fb67fb7498de26b339228fff
   - enabled: 1
+    path: Assets/Scenes/FifthLevel.unity
+    guid: f397ac83c6db102489a371e975907ff9
+  - enabled: 1
     path: Assets/Scenes/ScoreBoard.unity
     guid: bded6667f3cd3fc49877c4fd0542f8dd
   m_configObjects: {}
