@@ -18,7 +18,11 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false;
+        if (QualitySettings.GetQualityLevel() < 1)
+        {
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = 30;
+        }
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         collider = GetComponent<Collider>();

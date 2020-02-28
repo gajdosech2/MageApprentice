@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4965615300560786}
   - component: {fileID: 33722591825913894}
   - component: {fileID: 23709420183087798}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stone_Bishop_Element_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4804555513370510}
   - component: {fileID: 33726058719434062}
   - component: {fileID: 23637943104981206}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stone_Bishop_Element_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 4489390415963748}
   - component: {fileID: 33851848113446256}
   - component: {fileID: 23363164818119316}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stone_Bishop_Element_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4964487031023218}
   - component: {fileID: 728524681}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Black Stone Bishop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ Transform:
   m_GameObject: {fileID: 1239270685352430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3, y: 1.88, z: 0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_Children:
   - {fileID: 4466001236860476}
   - {fileID: 4532289659979864}
@@ -267,6 +267,7 @@ Transform:
   - {fileID: 4150431826047816}
   - {fileID: 4965615300560786}
   - {fileID: 4187147620355468}
+  - {fileID: 7770375265307039086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -294,7 +295,7 @@ GameObject:
   - component: {fileID: 4532289659979864}
   - component: {fileID: 33310209967825256}
   - component: {fileID: 23094740165563872}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stone_Bishop_Element_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +372,7 @@ GameObject:
   - component: {fileID: 4150431826047816}
   - component: {fileID: 33498074490487444}
   - component: {fileID: 23209609463501520}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stone_Bishop_Element_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +449,7 @@ GameObject:
   - component: {fileID: 4187147620355468}
   - component: {fileID: 33920153681923912}
   - component: {fileID: 23258977764456632}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stone_Bishop_Element_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +526,7 @@ GameObject:
   - component: {fileID: 4964639439196940}
   - component: {fileID: 33172080722056480}
   - component: {fileID: 23499354973324398}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stone_Bishop_Element_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +603,7 @@ GameObject:
   - component: {fileID: 4466001236860476}
   - component: {fileID: 33986741236333996}
   - component: {fileID: 23177579492477708}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stone_Bishop_Element_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,3 +669,72 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &9090966848445899833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7770375265307039086}
+  - component: {fileID: 2002855660356427446}
+  m_Layer: 2
+  m_Name: Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7770375265307039086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9090966848445899833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4964487031023218}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &2002855660356427446
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9090966848445899833}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Intensity: 2
+  m_Range: 4
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0

@@ -22,7 +22,7 @@ public class FPSDisplay : MonoBehaviour
 		style.normal.textColor = new Color(1.0f, 1.0f, 1.0f, 0.5f);
 		float msec = deltaTime * 1000.0f;
 		float fps = 1.0f / deltaTime;
-		string text = string.Format(" v0.3 {0:0.0} ms ({1:0.} fps)", msec, fps);
+		string text = string.Format(" v0.4 {0:0.0} ms ({1:0.} fps)", msec, fps);
 		GUI.Label(rect, text, style);
 	}
 }

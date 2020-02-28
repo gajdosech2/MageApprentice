@@ -675,7 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca15653794ddd8540b95babbb12ec144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: IntroLevel
+  level: Menu
   score: {fileID: 634995810}
   time: {fileID: 1297767792}
 --- !u!4 &1345026289

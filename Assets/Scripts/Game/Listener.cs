@@ -13,7 +13,7 @@ public class Listener : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void ListenerTrigger()
+    public void Trigger()
     {
         foreach (GameObject activate in to_activate)
         {

@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
+    public GameObject orb;
     GameObject info;
-    Animator animator;
+    Animator animator; 
 
     void Start()
     {
-        info = transform.Find("Info").gameObject;
+        //info = transform.Find("Info").gameObject;
         animator = GetComponent<Animator>();
     }
 
     void OnTriggerEnter(Collider other)
     {
+        if (orb != null)
+        {
+            orb.SetActive(true);
+        }
         if (info != null)
         {
             info.SetActive(true);

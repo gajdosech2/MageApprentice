@@ -24,6 +24,7 @@ public class CameraController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(target_position, transform.position - target_position, out hit, distance, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
         {
+            Debug.Log(hit.collider.name);
             transform.position = hit.point;
             transform.position -= (transform.position - target_position) * 0.1f;
         }

@@ -19,18 +19,13 @@ public class PlayerCollector : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("Pickup"))
 		{
-			other.gameObject.SetActive(false);
 			ManagerGame.total_score += other.gameObject.GetComponent<PickupScore>().value;
 			ManagerGame.total_score = Mathf.Max(ManagerGame.total_score, 0);
 			if (score_text != null)
             {
 				score_text.text = ManagerGame.total_score.ToString();
 			}
+			Destroy(other.gameObject);
 		}
-	}
-
-	void OnDestroy()
-	{
-		ManagerGame.total_time = (int)Time.time;
 	}
 }

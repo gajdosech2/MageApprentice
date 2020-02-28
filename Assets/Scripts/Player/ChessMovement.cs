@@ -7,13 +7,12 @@ public class ChessMovement : MonoBehaviour
     public const float TILE_SIZE = 1.666f;
     Vector3 START_POS = new Vector3(7.5f, 0.0f, 7.5f);
 
-    const float WAIT_TIME = 1.0f;
     bool on_chessboard = false;
-    float time_entered = 0.0f;
+    bool start = false;
 
     const float MOVE_DISTANCE = 2.35f;
     float move_speed = 2.0f;
-    float move_lerp = 1.0f;
+    float move_lerp = 0.0f;
     Vector3 start_position = Vector3.zero;
 
     const int ROTATION_AMOUNT = 90;
@@ -22,22 +21,13 @@ public class ChessMovement : MonoBehaviour
     float rotation_lerp = 1.0f;
     float start_rotation = -45;
 
-    CharacterController controller;
     PlayerMovement normal_movement;
     PlayerController player;
 
     void Start()
     {
-        controller = GetComponent<CharacterController>();
         normal_movement = GetComponent<PlayerMovement>();
         player = GetComponent<PlayerController>();
-    }
-
-    void Tile()
-    {
-        int row = (int)(transform.position.z / TILE_SIZE);
-        int col = (int)(transform.position.x / TILE_SIZE);
-        Debug.Log("Col: " + col + ", Row: " + row);
     }
 
     bool Bounds()
@@ -47,32 +37,14 @@ public class ChessMovement : MonoBehaviour
         {
             return false;
         }
-
-        int row = (int)(new_position.z / TILE_SIZE);
-        int col = (int)(new_position.x / TILE_SIZE);
-        return Chess.instance.Check(row, col);
+        return Chess.instance.Free((int)(new_position.z / TILE_SIZE), (int)(new_position.x / TILE_SIZE));
     }
 
     void Move()
     {
         player.move_direction = Vector3.zero;
 
-        if (move_lerp >= 1.0f && rotation_lerp >= 1.0f && !Chess.instance.enemy_turn)
-        {
-            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
-            {
-                rotation_dir = (Input.GetAxisRaw("Horizontal") > 0) ? 1 : -1;
-                rotation_lerp = 0.0f;
-                start_rotation = transform.rotation.eulerAngles.y;
-            }
-            if (Input.GetAxisRaw("Vertical") > 0 && Bounds())
-            {
-                move_lerp = 0.0f;
-                start_position = transform.position;
-            }
-        }
-
-        else if (move_lerp < 1.0f)
+        if (move_lerp < 1.0f)
         {
             player.move_direction.x = 1.0f;
             move_lerp += move_speed * Time.deltaTime;
@@ -88,41 +60,65 @@ public class ChessMovement : MonoBehaviour
             rotation_lerp += rotation_speed * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(Quaternion.Euler(0, start_rotation, 0), Quaternion.Euler(0, start_rotation + rotation_dir * ROTATION_AMOUNT, 0), rotation_lerp);
         }
+
+        else if (!Chess.instance.enemy_turn)
+        {
+            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
+            {
+                rotation_dir = (Input.GetAxisRaw("Horizontal") > 0) ? 1 : -1;
+                rotation_lerp = 0.0f;
+                start_rotation = transform.rotation.eulerAngles.y;
+            }
+            if (Input.GetAxisRaw("Vertical") > 0 && Bounds())
+            {
+                move_lerp = 0.0f;
+                start_position = transform.position;
+            }
+        }
     }
 
     void Update()
     {
-        if (on_chessboard && Time.time - time_entered > WAIT_TIME)
+        if (on_chessboard)
         {
-            if (Input.GetKey(KeyCode.E) || Chess.instance.end)
+            if (Chess.instance.end)
             {
                 Leave();
             }
-            Move();
+            else if (start == false)
+            {
+                move_lerp += move_speed/4 * Time.deltaTime;
+                transform.position = Vector3.Lerp(start_position, START_POS, move_lerp);
+                if (move_lerp >= 1.0f)
+                {
+                    start = true;
+                    Chess.instance.gui.SetActive(true);
+                    Chess.instance.Switch();
+                }
+            }
+            else 
+            {
+                Move();
+            }
         }
     }
 
     void Leave()
     {
         on_chessboard = false;
-        controller.enabled = true;
         normal_movement.enabled = true;
         Chess.instance.gui.SetActive(false);
     }
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.name.Equals("ChessBoard") && time_entered == 0.0f)
+		if (other.gameObject.name.Equals("ChessBoard") && start == false)
         {
             on_chessboard = true;
-            time_entered = Time.time;
-            controller.enabled = false;
             normal_movement.enabled = false;
-            transform.position = START_POS;
             transform.rotation = Quaternion.Euler(0, 45, 0);
             player.move_direction = Vector3.zero;
-            Chess.instance.gui.SetActive(true);
-            Chess.instance.Switch();
+            start_position = transform.position;
         }
 	}
 }
