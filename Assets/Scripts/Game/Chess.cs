@@ -186,7 +186,7 @@ public class Chess : MonoBehaviour
     {
         if (rotation_lerp < 1.0f)
         {
-            rotation_lerp += 0.9f * Time.deltaTime;
+            rotation_lerp += 0.5f * Time.deltaTime;
             enemies[active_enemy].transform.rotation = Quaternion.Lerp(Quaternion.Euler(0, start_rotation, 0), Quaternion.Euler(0, start_rotation + 90, 0), rotation_lerp);
         }
         else if (move_lerp == 0.0f && !Target())
@@ -196,7 +196,7 @@ public class Chess : MonoBehaviour
         }
         else if (move_lerp < 1.0f)
         {
-            move_lerp += 2.0f * Time.deltaTime;
+            move_lerp += 1.0f * Time.deltaTime;
             enemies[active_enemy].transform.position = Vector3.Lerp(start_position, start_position + enemies[active_enemy].transform.forward * 2.35f, move_lerp);
         }
         else
