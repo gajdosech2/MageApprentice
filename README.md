@@ -8,5 +8,6 @@ Plans:
 - hanoi towers 
 - stealth level
 - collect/combine items in inventory and escape
+- action bar with 3 inventory slots
 
 https://api.github.com/repos/gajdosech2/MageApprentice
