@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = 30;
         }
+        Cursor.visible = false;
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         collider = GetComponent<Collider>();
@@ -65,5 +66,10 @@ public class PlayerController : MonoBehaviour
             ManagerGame.Menu();
         }
         Animation();
+    }
+
+    void OnDestroy()
+    {
+        Cursor.visible = true;
     }
 }

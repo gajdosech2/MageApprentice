@@ -22765,7 +22765,7 @@ PrefabInstance:
     - target: {fileID: 309549301346344187, guid: dc232786d67be0443af3e268fb2a816f,
         type: 3}
       propertyPath: level
-      value: ScoreBoard
+      value: Level06
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc232786d67be0443af3e268fb2a816f, type: 3}
