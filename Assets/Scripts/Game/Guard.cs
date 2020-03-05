@@ -35,7 +35,7 @@ public class Guard : MonoBehaviour
 
     void Update()
     {
-        if (Time.time < delay || lerp < 0.0f)
+        if (Time.timeSinceLevelLoad < delay || lerp < 0.0f)
         {
             return;
         }
