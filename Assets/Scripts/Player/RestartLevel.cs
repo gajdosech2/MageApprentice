@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RestartLevel : MonoBehaviour
 {
-    public string level = "FirstLevel";
+    public string level = "Level00";
     PlayerMovement player_movement;
     PlayerController player_controller;
     PlayerCollector player_collector;

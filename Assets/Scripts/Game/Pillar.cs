@@ -41,15 +41,15 @@ public class Pillar : MonoBehaviour
     bool Free()
     {
         Vector3 pos = start_position + dir + Vector3.up;
-        Collider[] colliders = Physics.OverlapSphere(pos, 0.1f);
-        return colliders.Length == 0;
+        return Physics.OverlapSphere(pos, 0.1f).Length == 0;
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            transform.position = original_position;
+            ManagerGame.total_score = Mathf.Max(ManagerGame.total_score - GameObject.Find("MageCharacter").GetComponent<PlayerCollector>().level_score, 0);
+            Application.LoadLevel("Level06");
         }
 
         if (move_lerp < 1.0f)

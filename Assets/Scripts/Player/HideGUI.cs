@@ -8,7 +8,7 @@ public class HideGUI : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Submit"))
+        if (Input.GetButtonDown("Submit"))
         {
             hint.SetActive(false);
         }

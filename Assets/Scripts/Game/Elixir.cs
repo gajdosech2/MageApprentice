@@ -8,11 +8,6 @@ public class Elixir : MonoBehaviour
     public List<GameObject> elixirs;
     bool interact = false;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (Input.GetButtonDown("Submit") && interact)

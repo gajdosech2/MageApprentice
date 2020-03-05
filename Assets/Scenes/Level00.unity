@@ -411,7 +411,7 @@ PrefabInstance:
     - target: {fileID: 309549301346344187, guid: dc232786d67be0443af3e268fb2a816f,
         type: 3}
       propertyPath: level
-      value: FirstLevel
+      value: Level01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc232786d67be0443af3e268fb2a816f, type: 3}
@@ -3387,6 +3387,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 520565080}
     m_Modifications:
+    - target: {fileID: 135988, guid: 14fb00da0e33940448e682c534f283dd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 165492, guid: 14fb00da0e33940448e682c534f283dd, type: 3}
       propertyPath: m_Name
       value: Fortress Gate
@@ -4323,7 +4327,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8afa8552003222947baff52a0a63c8fe, type: 3}
     m_FontSize: 42
-    m_FontStyle: 2
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 42
@@ -4333,7 +4337,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.75
-  m_Text: '          Enter                          '
+  m_Text: '           Enter                          '
 --- !u!222 &2122749284
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4439,7 +4443,7 @@ PrefabInstance:
     - target: {fileID: 2762740619112194242, guid: ea1a3fb73278d9f4480f35f5dd58b617,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 38.8838
+      value: 38.766
       objectReference: {fileID: 0}
     - target: {fileID: 2762740619112194242, guid: ea1a3fb73278d9f4480f35f5dd58b617,
         type: 3}
@@ -4485,6 +4489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Magic
+      objectReference: {fileID: 0}
+    - target: {fileID: 2762740619112194243, guid: ea1a3fb73278d9f4480f35f5dd58b617,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea1a3fb73278d9f4480f35f5dd58b617, type: 3}

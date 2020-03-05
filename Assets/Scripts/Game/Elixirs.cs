@@ -9,8 +9,23 @@ public class Elixirs : MonoBehaviour
     public static Elixirs instance;
     public List<GameObject> slot1_elixirs;
     public List<GameObject> slot2_elixirs;
-    Types player_slot1 = Types.none;
-    Types player_slot2 = Types.none;
+
+    [HideInInspector]
+    public Types player_slot1 = Types.none;
+    [HideInInspector]
+    public Types player_slot2 = Types.none;
+
+    void Start()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     void Refresh()
     {
@@ -71,20 +86,14 @@ public class Elixirs : MonoBehaviour
         return pop;
     }
 
-    void Start()
-    {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-        }
-    }
-
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Types temp = player_slot1;
+            player_slot1 = player_slot2;
+            player_slot2 = temp;
+        }
         Refresh();
     }
 

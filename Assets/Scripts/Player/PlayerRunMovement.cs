@@ -89,10 +89,10 @@ public class PlayerRunMovement : MonoBehaviour
         }
         else if (other.gameObject.layer == 9)
         {
-            animator.SetInteger("State", 3);
+            over.SetActive(true);
             on_run = false;
             ball.Stop();
-            over.SetActive(true);
+            animator.SetInteger("State", 3);
         }
     }
 }

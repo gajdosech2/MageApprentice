@@ -6,7 +6,9 @@ public class Book : MonoBehaviour
 {
     public string color = "";
     public GameObject hint;
+    public GameObject read;
 
+    private bool interact = false;
     private Light light;
     private float deactivated_light;
     private BoxCollider collider;
@@ -20,30 +22,52 @@ public class Book : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
+        interact = true;
 		if (BooksPuzzle.instance != null)
-        {
-            BooksPuzzle.instance.Activate(color);
-            light.intensity = deactivated_light + 4;
+        {  
             collider.size = new Vector3(collider.size.x, 5, collider.size.z);
-            Invoke("Light", 10.0f);
         }
         if (hint != null)
         {
             hint.SetActive(true);
         }
-	}
+        if (read != null)
+        {
+            read.SetActive(true);
+        }
+    }
 
     void OnTriggerExit(Collider other)
     {
+        interact = false;
         if (hint != null)
         {
             hint.SetActive(false);
         }
+        if (read != null)
+        {
+            read.SetActive(false);
+        }
+    }
+
+    void Read()
+    {
+        BooksPuzzle.instance.Activate(color);
+        light.intensity = deactivated_light + 4;
+        Invoke("Light", 10.0f);
     }
 
     void Light()
     {
         light.intensity = deactivated_light;
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("Submit") && interact)
+        {
+            Read();
+        }
     }
 
 }
