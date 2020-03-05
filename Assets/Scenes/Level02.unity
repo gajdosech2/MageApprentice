@@ -5484,7 +5484,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Activate book by pressing \nEnter"
+  m_Text: 'Activate book by pressing
+
+    Enter'
 --- !u!222 &1388642219
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5669,7 +5671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1412227675
 RectTransform:
   m_ObjectHideFlags: 0
