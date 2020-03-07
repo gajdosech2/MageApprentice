@@ -2,12 +2,9 @@
 
 Simple 3D Platformer / Adventure / Puzzle Game. See https://github.com/gajdosech2/MageApprentice/releases for runnable versions.
 
-Plans:
-- conversation/quiz level
-- connect the dots by moving some object
-- hanoi towers 
-- stealth level
-- collect/combine items in inventory and escape
-- action bar with 3 inventory slots
+![Screenshot Gate](https://raw.githubusercontent.com/gajdosech2/MageApprentice/master/Screenshots/Screen1.png)
+![Screenshot Library](https://raw.githubusercontent.com/gajdosech2/MageApprentice/master/Screenshots/Screen2.png)
+![Screenshot Pillars](https://raw.githubusercontent.com/gajdosech2/MageApprentice/master/Screenshots/Screen3.png)
+![Screenshot Dungeon](https://raw.githubusercontent.com/gajdosech2/MageApprentice/master/Screenshots/Screen4.png)
 
 https://api.github.com/repos/gajdosech2/MageApprentice
