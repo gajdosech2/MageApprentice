@@ -21,6 +21,7 @@ public class RestartLevel : MonoBehaviour
     {
         player_movement.enabled = false;
         player_controller.move_direction = Vector3.zero;
+        player_controller.enabled = false;
         if (Input.GetButton("Submit"))
         {
             ManagerGame.total_score = Mathf.Max(ManagerGame.total_score - player_collector.level_score, 0);

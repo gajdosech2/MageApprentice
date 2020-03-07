@@ -355,6 +355,7 @@ MonoBehaviour:
   color: R
   hint: {fileID: 2143309495}
   read: {fileID: 1412227674}
+  confirm: {fileID: 1571101262}
 --- !u!4 &76098981 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 628039053740435697, guid: 18ef09af4f5a28c4b9c088f1c1c4059d,
@@ -498,6 +499,7 @@ MonoBehaviour:
   color: P
   hint: {fileID: 2117464638}
   read: {fileID: 1412227674}
+  confirm: {fileID: 1571101262}
 --- !u!1 &100369170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,7 +1340,7 @@ GameObject:
   - component: {fileID: 326380516}
   - component: {fileID: 326380517}
   m_Layer: 0
-  m_Name: Puzzle
+  m_Name: BooksPuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1478,7 +1480,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Right from the beginning, \nthe mage must be able to\ncontrol his anger."
+  m_Text: "Right from the beginning, the mage \nmust be able to control his anger.\nBeginners
+    are advised to start\nby reading the <color=red>red book</color>."
 --- !u!222 &356954312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1622,6 +1625,7 @@ MonoBehaviour:
   color: Y
   hint: {fileID: 948022016}
   read: {fileID: 1412227674}
+  confirm: {fileID: 1571101262}
 --- !u!1001 &377290077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1840,9 +1844,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'To use the power of fertile plains,
-
-    one must first obey wild forests.'
+  m_Text: "To use the power of <color=yellow>yellowish</color>, fertile \nplains,
+    one must first master forests \nof <color=green>greenery</color>. This also applies
+    to \nthe reading order of those books."
 --- !u!222 &417650476
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2460,20 +2464,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5177146446898373061, guid: 335dff49dc4b98f4c8d601756a3df6ee,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5808344679422700549, guid: 335dff49dc4b98f4c8d601756a3df6ee,
         type: 3}
       propertyPath: m_Name
       value: Passage3 Out
-      objectReference: {fileID: 0}
-    - target: {fileID: 6747546828636683403, guid: 335dff49dc4b98f4c8d601756a3df6ee,
-        type: 3}
-      propertyPath: level
-      value: Level03
       objectReference: {fileID: 0}
     - target: {fileID: 8790429075554819633, guid: 335dff49dc4b98f4c8d601756a3df6ee,
         type: 3}
@@ -3218,6 +3212,83 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1086439140}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &727914818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 727914819}
+  - component: {fileID: 727914821}
+  - component: {fileID: 727914820}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &727914819
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727914818}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1571101263}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 550, y: 300}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &727914820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727914818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 8afa8552003222947baff52a0a63c8fe, type: 3}
+    m_FontSize: 38
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Knowledge Acquired!
+--- !u!222 &727914821
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727914818}
+  m_CullTransparentMesh: 0
 --- !u!4 &732178543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4881226026202341945, guid: 23b0d712d975e8942970a62d74cc190c,
@@ -3355,25 +3426,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &779110941 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7441135011789313824, guid: f10433013b1ec7848a4a25575e373832,
-    type: 3}
-  m_PrefabInstance: {fileID: 1823026136}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &779110942
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779110941}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.222648, y: 0.8930785, z: 2.2344265}
-  m_Center: {x: 0.000000029802326, y: 0.44653925, z: 0}
 --- !u!4 &779110945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7441135011789212416, guid: f10433013b1ec7848a4a25575e373832,
@@ -4026,6 +4078,7 @@ MonoBehaviour:
   color: G
   hint: {fileID: 171954775}
   read: {fileID: 1412227674}
+  confirm: {fileID: 1571101262}
 --- !u!1001 &995374121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4946,6 +4999,7 @@ MonoBehaviour:
   color: B
   hint: {fileID: 1686621422}
   read: {fileID: 1412227674}
+  confirm: {fileID: 1571101262}
 --- !u!4 &1221765679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 628039053740435697, guid: 18ef09af4f5a28c4b9c088f1c1c4059d,
@@ -5194,8 +5248,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "I believe in purple, necromancy is\nmy path. However, to unlock full \npotential,
-    it is necessery to study all\nbooks in the correct order!"
+  m_Text: "I believe in <color=purple>purple necromancy </color>, that\nis my path.
+    However, to unlock full \npotential, it is necessery to study all\nbooks in the
+    <color=white>correct order</color>!"
 --- !u!222 &1324719413
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5254,7 +5309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5495,7 +5550,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Activate book by pressing
 
-    Enter'
+'
 --- !u!222 &1388642219
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6402,7 +6457,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Blue is the highest color, as the \npower to read minds is second to none."
+  m_Text: "Water is the highest magic, as the \npower to read minds is second to none.\nTherefore,
+    the <color=blue>blue book</color> should be\nread as the very last."
 --- !u!222 &1557891985
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6417,6 +6473,79 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2110734001}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1571101262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1571101263}
+  - component: {fileID: 1571101265}
+  - component: {fileID: 1571101264}
+  m_Layer: 5
+  m_Name: Confirm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1571101263
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571101262}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 727914819}
+  m_Father: {fileID: 2140906086}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -220}
+  m_SizeDelta: {x: 375, y: 120}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1571101264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571101262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8dd861a6e819de241bca68a36048a6bd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1571101265
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571101262}
+  m_CullTransparentMesh: 0
 --- !u!114 &1583272403 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1583272403, guid: 335dff49dc4b98f4c8d601756a3df6ee,
@@ -6566,11 +6695,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Even though necromancers consider
-
-    themselves greatest, they are not
-
-    yet at the end of the road.'
+  m_Text: "Even though necromancers consider\nthemselves the greatest, they are not\nyet
+    at the end of the road. <color=purple>Their \nbook</color> should be read last
+    but one."
 --- !u!222 &1598064407
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8028,6 +8155,7 @@ RectTransform:
   - {fileID: 2117464639}
   - {fileID: 948022017}
   - {fileID: 1412227675}
+  - {fileID: 1571101263}
   m_Father: {fileID: 326380516}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

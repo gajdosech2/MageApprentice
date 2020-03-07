@@ -7,6 +7,7 @@ public class Book : MonoBehaviour
     public string color = "";
     public GameObject hint;
     public GameObject read;
+    public GameObject confirm;
 
     private bool interact = false;
     private Light light;
@@ -48,6 +49,10 @@ public class Book : MonoBehaviour
         {
             read.SetActive(false);
         }
+        if (confirm != null)
+        {
+            confirm.SetActive(false);
+        }
     }
 
     void Read()
@@ -55,6 +60,8 @@ public class Book : MonoBehaviour
         BooksPuzzle.instance.Activate(color);
         light.intensity = deactivated_light + 4;
         Invoke("Light", 10.0f);
+        read.SetActive(false);
+        confirm.SetActive(true);
     }
 
     void Light()

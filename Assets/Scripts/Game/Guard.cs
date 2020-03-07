@@ -44,7 +44,7 @@ public class Guard : MonoBehaviour
         {
             if (animator.GetInteger("State") == 1)
             {
-                lerp += 0.13f * Time.deltaTime;
+                lerp += 0.2f * Time.deltaTime;
                 int next_position = (current_position + 1) % positions.Count;
                 transform.position = Vector3.Lerp(positions[current_position], positions[next_position], lerp);
             }
