@@ -629,6 +629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   over: {fileID: 0}
+  delay: 2
   positions:
   - {x: -8, y: 0, z: 3}
   - {x: 3, y: 0, z: 3}
@@ -643,8 +644,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.25
-  m_Center: {x: 0, y: 0, z: 2.5}
+  m_Radius: 2.4
+  m_Center: {x: 0, y: 0, z: 2.25}
 --- !u!1 &1739549723761954118
 GameObject:
   m_ObjectHideFlags: 0
