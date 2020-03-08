@@ -5,8 +5,8 @@ using UnityEngine;
 public class Pillar : MonoBehaviour
 {
     public GameObject Lock;
+    public GameObject Interact;
 
-    bool interact = false;
     float move_lerp = 1.0f;
     Vector3 start_position = Vector3.zero;
     Vector3 dir = Vector3.zero;
@@ -14,9 +14,9 @@ public class Pillar : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && dir == Vector3.zero)
+        if (other.gameObject.CompareTag("Player"))
         {
-            interact = true;
+            Interact.SetActive(true);
             player = other.gameObject;
         }
     }
@@ -25,7 +25,7 @@ public class Pillar : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            interact = false;
+            Interact.SetActive(false);
         }
     }
 
@@ -42,7 +42,7 @@ public class Pillar : MonoBehaviour
             return;
         }
         Vector3 pos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
-        if (dir == Vector3.zero && interact && !Lock.activeSelf && Vector3.Distance(pos, transform.position) < 0.98f)
+        if (dir == Vector3.zero && Interact.activeSelf && !Lock.activeSelf && Vector3.Distance(pos, transform.position) < 0.98f)
         {
             if (transform.position.x - pos.x > 0.8f)
             {
@@ -71,7 +71,7 @@ public class Pillar : MonoBehaviour
             Application.LoadLevel("Level06");
         }
 
-        if (interact && dir == Vector3.zero && Input.GetButtonDown("Submit"))
+        if (Interact.activeSelf && dir == Vector3.zero && Input.GetButtonDown("Submit"))
         {
             Lock.SetActive(!Lock.activeSelf);
         }

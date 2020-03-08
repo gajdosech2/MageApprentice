@@ -13296,6 +13296,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2028461921960167545, guid: deaf771858f5037408e451df8f76e94e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909035846812444855, guid: deaf771858f5037408e451df8f76e94e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3500506268473312349, guid: deaf771858f5037408e451df8f76e94e,
         type: 3}
       propertyPath: m_Name
@@ -13355,6 +13365,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916649283631605675, guid: deaf771858f5037408e451df8f76e94e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deaf771858f5037408e451df8f76e94e, type: 3}
@@ -18222,7 +18237,7 @@ PrefabInstance:
     - target: {fileID: 3500506268473312349, guid: deaf771858f5037408e451df8f76e94e,
         type: 3}
       propertyPath: m_Name
-      value: SteppingPillar
+      value: SteppingPillar (0)
       objectReference: {fileID: 0}
     - target: {fileID: 3502871758397596285, guid: deaf771858f5037408e451df8f76e94e,
         type: 3}
