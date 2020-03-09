@@ -11835,6 +11835,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 494512409}
     m_Modifications:
+    - target: {fileID: 2463494051670188794, guid: e2a59cfaac47a0f469fd6d082f2c40b7,
+        type: 3}
+      propertyPath: m_Text
+      value: You did not escape...
+      objectReference: {fileID: 0}
     - target: {fileID: 2993517356103260088, guid: e2a59cfaac47a0f469fd6d082f2c40b7,
         type: 3}
       propertyPath: m_Name

@@ -5,7 +5,10 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform target;
-    private Vector3 offset;
+
+    [HideInInspector]
+    public Vector3 offset;
+
     float distance;
 
     void Start()

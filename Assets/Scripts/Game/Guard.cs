@@ -29,7 +29,6 @@ public class Guard : MonoBehaviour
             over.SetActive(true);
             lerp = -1.0f;
             animator.SetInteger("State", 2);
-            GameObject.Find("MageCharacter").GetComponent<Animator>().SetInteger("State", 3);
         }
     }
 

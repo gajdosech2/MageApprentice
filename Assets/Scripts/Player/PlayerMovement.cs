@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(player.move_direction * Time.deltaTime);
 
         player.rotation_vector.y = Input.GetAxis("Mouse X") + Input.GetAxis("Horizontal");
-        controller.transform.Rotate(player.rotation_vector * rotation_speed * Time.deltaTime);
+        transform.Rotate(player.rotation_vector * rotation_speed * Time.deltaTime);
     }
 
     void Update()

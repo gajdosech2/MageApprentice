@@ -92,7 +92,6 @@ public class PlayerRunMovement : MonoBehaviour
             over.SetActive(true);
             on_run = false;
             ball.Stop();
-            animator.SetInteger("State", 3);
         }
     }
 }
