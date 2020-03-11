@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class HideGUI : MonoBehaviour
 {
+    public JoyButton enter;
     public GameObject hint;
 
     void Update()
     {
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Submit") || enter.pressed)
         {
             hint.SetActive(false);
         }

@@ -2828,7 +2828,7 @@ Transform:
   - {fileID: 168200893}
   - {fileID: 679725060}
   m_Father: {fileID: 1164664861}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &774385313
 BoxCollider:
@@ -2872,12 +2872,14 @@ MonoBehaviour:
   enemy_unit: {fileID: 1460520423}
   enemy_exclamation: {fileID: 1439198278}
   over: {fileID: 412295899}
-  gui: {fileID: 591781472}
   enemy_name: <color=navy>Water Impling</color>
+  gui: {fileID: 591781472}
+  player_gui: {fileID: 1249900891}
   text: {fileID: 44820922}
+  attack_button: {fileID: 815106915}
+  heal_button: {fileID: 548385203}
   player_health: {fileID: 399676145}
   enemy_health: {fileID: 2142853070}
-  player_gui: {fileID: 1249900891}
 --- !u!4 &782088153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8950078417423820173, guid: 905e8361b36979c4f95c1dbac4b88344,
@@ -3975,10 +3977,10 @@ Transform:
   m_Children:
   - {fileID: 878574094}
   - {fileID: 591781473}
-  - {fileID: 25776909}
-  - {fileID: 1429062454}
-  - {fileID: 774385312}
   - {fileID: 1723966075}
+  - {fileID: 1429062454}
+  - {fileID: 25776909}
+  - {fileID: 774385312}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4495,12 +4497,14 @@ MonoBehaviour:
   enemy_unit: {fileID: 1786136739}
   enemy_exclamation: {fileID: 1704816290}
   over: {fileID: 412295899}
-  gui: {fileID: 591781472}
   enemy_name: <color=maroon>Fire Impling</color>
+  gui: {fileID: 591781472}
+  player_gui: {fileID: 1249900891}
   text: {fileID: 44820922}
+  attack_button: {fileID: 815106915}
+  heal_button: {fileID: 548385203}
   player_health: {fileID: 399676145}
   enemy_health: {fileID: 2142853070}
-  player_gui: {fileID: 1249900891}
 --- !u!65 &1429062456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4638,7 +4642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 455730, guid: a74b8142f61144d368e5dde7c70fe020, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 455730, guid: a74b8142f61144d368e5dde7c70fe020, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5790,7 +5794,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1164664861}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1740900140
 PrefabInstance:

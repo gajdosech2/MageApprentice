@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RestartLevel : MonoBehaviour
+public class GameOver : MonoBehaviour
 {
     public string level = "Level00";
     PlayerCollector player_collector;
@@ -19,7 +19,7 @@ public class RestartLevel : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Submit"))
+        if (Input.GetButtonDown("Submit"))
         {
             ManagerGame.total_score = Mathf.Max(ManagerGame.total_score - player_collector.level_score, 0);
             Application.LoadLevel(level);

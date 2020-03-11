@@ -6,11 +6,6 @@ using UnityEngine.Events;
 
 public class BattleSystem : MonoBehaviour
 {
-    public UnityEvent OnActivate;
-    public BattleUnit enemy_unit;
-    public GameObject enemy_exclamation;
-    public GameObject over;
-
     private Vector3 old_offset;
     private float lerp = 0.0f;
     private float new_health;
@@ -22,13 +17,20 @@ public class BattleSystem : MonoBehaviour
     private PlayerMovement player_movement;
     private Animator player_animator;
 
-    public GameObject gui;
+    public UnityEvent OnActivate;
+    public BattleUnit enemy_unit;
+    public GameObject enemy_exclamation;
+    public GameObject over;
+
     public string enemy_name;
+    public GameObject gui;
+    public GameObject player_gui;
     public Text text;
+    public Button attack_button;
+    public Button heal_button;
     public Slider player_health;
     public Slider enemy_health;
-    public GameObject player_gui;
-
+    
     void Start()
     {
         GameObject player = GameObject.Find("MageCharacter");
@@ -44,12 +46,17 @@ public class BattleSystem : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && lerp == 0.0f)
         {
+            attack_button.onClick.RemoveAllListeners();
+            attack_button.onClick.AddListener(OnAttackButton);
+            heal_button.onClick.RemoveAllListeners();
+            heal_button.onClick.AddListener(OnHealButton);
             StartCoroutine("SetupBattle");
         }
     }
 
     IEnumerator SetupBattle()
     {
+
         player_controller.move_direction = Vector3.zero;
         player_movement.enabled = false;
         player_controller.transform.rotation = transform.rotation;

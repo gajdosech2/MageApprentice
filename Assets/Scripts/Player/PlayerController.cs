@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
     void LateUpdate()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             ManagerGame.Menu();
         }

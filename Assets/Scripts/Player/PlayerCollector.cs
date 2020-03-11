@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerCollector : MonoBehaviour
 {
 	public Text score_text;
+
+	[HideInInspector]
 	public int level_score = 0;
 
 	void Start()

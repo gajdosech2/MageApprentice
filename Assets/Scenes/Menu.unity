@@ -1320,7 +1320,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You can always return to this Menu by pressing <color=maroon>ESC</color>!
+  m_Text: You can always return to this Menu by pressing <color=maroon>M</color>!
 --- !u!222 &898861694
 CanvasRenderer:
   m_ObjectHideFlags: 0
