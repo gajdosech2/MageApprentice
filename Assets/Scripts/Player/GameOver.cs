@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
+    public JoyButton enter;
     public string level = "Level00";
     PlayerCollector player_collector;
 
@@ -19,7 +20,7 @@ public class GameOver : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Submit") || enter.GetDown())
         {
             ManagerGame.total_score = Mathf.Max(ManagerGame.total_score - player_collector.level_score, 0);
             Application.LoadLevel(level);

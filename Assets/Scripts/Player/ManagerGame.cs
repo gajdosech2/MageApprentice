@@ -40,7 +40,7 @@ public class ManagerGame : MonoBehaviour
         {
             time.text = total_time.ToString() + "s";
         }
-        if (Input.GetButtonDown("Submit") || Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Submit") || Input.GetKeyDown(KeyCode.M) || Input.GetMouseButtonDown(0))
         {
             Menu();
         }

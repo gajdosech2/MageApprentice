@@ -132,6 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760a679771af0a941b697aeccebb5fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enter: {fileID: 0}
+  R: {fileID: 0}
   Lock: {fileID: 7306496052878841605}
   Interact: {fileID: 2607933127829623065}
 --- !u!1 &3500856411471463331

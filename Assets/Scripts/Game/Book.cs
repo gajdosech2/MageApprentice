@@ -8,6 +8,7 @@ public class Book : MonoBehaviour
     public GameObject hint;
     public GameObject read;
     public GameObject confirm;
+    public JoyButton enter;
 
     private bool interact = false;
     private Light light;
@@ -71,7 +72,7 @@ public class Book : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Submit") && interact)
+        if (interact && (enter.GetDown() || Input.GetButtonDown("Submit")))
         {
             Read();
         }

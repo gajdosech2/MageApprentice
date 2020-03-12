@@ -6,6 +6,7 @@ public class MenuScripts : MonoBehaviour
 {
     public GameObject menu;
     public GameObject challenges;
+    public GameObject settings;
 
     public void MainMenu()
     {
@@ -19,6 +20,12 @@ public class MenuScripts : MonoBehaviour
         menu.SetActive(false);
     }
 
+    public void Settings()
+    {
+        settings.SetActive(true);
+        menu.SetActive(false);
+    }
+
     public void LoadLevel(string level)
     {
         Application.LoadLevel(level);
@@ -27,5 +34,12 @@ public class MenuScripts : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void Setting(int level)
+    {
+        QualitySettings.SetQualityLevel(level, true);
+        menu.SetActive(true);
+        settings.SetActive(false);
     }
 }

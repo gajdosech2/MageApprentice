@@ -350,6 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4567dcadb18e9694e9346368aa464625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enter: {fileID: 178923967}
   message: {fileID: 785358755}
   elixirs:
   - {fileID: 33089925}
@@ -1588,6 +1589,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 145846901, guid: 622896809a613874080a67e483afe105, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 418420511667131746, guid: 622896809a613874080a67e483afe105,
         type: 3}
       propertyPath: m_TagString
@@ -1670,6 +1675,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 622896809a613874080a67e483afe105, type: 3}
+--- !u!114 &178923967 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1112273187, guid: 622896809a613874080a67e483afe105,
+    type: 3}
+  m_PrefabInstance: {fileID: 178923966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac9afa2d5b635f4f93498a332467320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &178923968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2110420014, guid: 622896809a613874080a67e483afe105,
+    type: 3}
+  m_PrefabInstance: {fileID: 178923966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac9afa2d5b635f4f93498a332467320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &191259450
 GameObject:
   m_ObjectHideFlags: 0
@@ -5190,6 +5219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4567dcadb18e9694e9346368aa464625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enter: {fileID: 178923967}
   message: {fileID: 785358755}
   elixirs:
   - {fileID: 514027376}
@@ -5503,6 +5533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4567dcadb18e9694e9346368aa464625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enter: {fileID: 178923967}
   message: {fileID: 785358755}
   elixirs:
   - {fileID: 531466384}
@@ -6761,6 +6792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4567dcadb18e9694e9346368aa464625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enter: {fileID: 178923967}
   message: {fileID: 785358755}
   elixirs:
   - {fileID: 672629064}
@@ -15969,6 +16001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4567dcadb18e9694e9346368aa464625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enter: {fileID: 178923967}
   message: {fileID: 785358755}
   elixirs:
   - {fileID: 1753027715}
@@ -18445,6 +18478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2640035db48dd49429fcdc7d88941153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  X: {fileID: 178923968}
   slot1_elixirs:
   - {fileID: 1216115366}
   - {fileID: 1482818213}
@@ -19508,6 +19542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4567dcadb18e9694e9346368aa464625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enter: {fileID: 178923967}
   message: {fileID: 785358755}
   elixirs:
   - {fileID: 3149283207252997640}

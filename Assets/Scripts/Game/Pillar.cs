@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pillar : MonoBehaviour
 {
+    public JoyButton enter;
+    public JoyButton R;
     public GameObject Lock;
     public GameObject Interact;
 
@@ -65,13 +67,13 @@ public class Pillar : MonoBehaviour
 
     void Update()
     {  
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) || R.GetDown())
         {
             ManagerGame.total_score = Mathf.Max(ManagerGame.total_score - GameObject.Find("MageCharacter").GetComponent<PlayerCollector>().level_score, 0);
             Application.LoadLevel("Level06");
         }
 
-        if (Interact.activeSelf && dir == Vector3.zero && Input.GetButtonDown("Submit"))
+        if (Interact.activeSelf && dir == Vector3.zero && (Input.GetButtonDown("Submit") || enter.GetDown()))
         {
             Lock.SetActive(!Lock.activeSelf);
         }

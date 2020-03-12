@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Elixir : MonoBehaviour
 {
+    public JoyButton enter;
     public GameObject message;
     public List<GameObject> elixirs;
     bool interact = false;
 
     void Update()
     {
-        if (Input.GetButtonDown("Submit") && interact)
+        if (interact && (Input.GetButtonDown("Submit") || enter.GetDown()))
         {
             for (Types i = Types.red; i <= Types.none; i++)
             {

@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
         if (controller.isGrounded)
         {
             player.move_direction.y = 0;
-            if (Input.GetButtonDown("Jump") || space.pressed)
+            if (Input.GetButtonDown("Jump") || space.GetDown())
             {
                 player.move_direction.y += jump_speed;
             }

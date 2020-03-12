@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerChessMovement : MonoBehaviour
 {
+    public FixedJoystick joystick;
     public const float TILE_SIZE = 1.666f;
     Vector3 START_POS = new Vector3(7.5f, 0.0f, 7.5f);
 
@@ -63,13 +64,13 @@ public class PlayerChessMovement : MonoBehaviour
 
         else if (!Chess.instance.enemy_turn)
         {
-            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
+            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || Mathf.Abs(joystick.Horizontal) > 0.5f)
             {
-                rotation_dir = (Input.GetAxisRaw("Horizontal") > 0) ? 1 : -1;
+                rotation_dir = (Input.GetAxisRaw("Horizontal") > 0 || joystick.Horizontal > 0) ? 1 : -1;
                 rotation_lerp = 0.0f;
                 start_rotation = transform.rotation.eulerAngles.y;
             }
-            if (Input.GetAxisRaw("Vertical") > 0 && Bounds())
+            if ((Input.GetAxisRaw("Vertical") > 0 || joystick.Vertical > 0.5f) && Bounds())
             {
                 move_lerp = 0.0f;
                 start_position = transform.position;

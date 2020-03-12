@@ -8,6 +8,7 @@ public class Chess : MonoBehaviour
     public static Chess instance;
     public const float TILE_SIZE = 1.666f;
 
+    public JoyButton enter;
     public GameObject gui;
     public GameObject enemy_text;
     public GameObject player_text;
@@ -215,7 +216,7 @@ public class Chess : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Submit"))
+        if (Input.GetButton("Submit") || enter.GetDown())
         {
             info.SetActive(false);
         }

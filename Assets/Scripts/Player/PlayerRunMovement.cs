@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerRunMovement : MonoBehaviour
 {
+    public FixedJoystick joystick;
+    public JoyButton space;
     public RuntimeAnimatorController newAnimatorController;
     public GameObject over;
 
@@ -43,14 +45,14 @@ public class PlayerRunMovement : MonoBehaviour
         if (controller.isGrounded)
         {
             player.move_direction.y = 0;
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") || space.GetDown())
             {
                 player.move_direction.y += jump_speed;
             }
         }
 
         player.move_direction.z = (controller.transform.forward * move_speed).z;
-        player.move_direction.x = Input.GetAxis("Horizontal") * 5; 
+        player.move_direction.x = Input.GetAxis("Horizontal") * 5 + joystick.Horizontal * 5; 
         controller.Move(player.move_direction * Time.deltaTime);
     }
 

@@ -11960,6 +11960,11 @@ PrefabInstance:
       propertyPath: level
       value: Level05
       objectReference: {fileID: 0}
+    - target: {fileID: 2993517356103260090, guid: e2a59cfaac47a0f469fd6d082f2c40b7,
+        type: 3}
+      propertyPath: enter
+      value: 
+      objectReference: {fileID: 1245062165}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2a59cfaac47a0f469fd6d082f2c40b7, type: 3}
 --- !u!224 &568228299 stripped
@@ -25994,6 +25999,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1241496465}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1245062165 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1112273187, guid: 622896809a613874080a67e483afe105,
+    type: 3}
+  m_PrefabInstance: {fileID: 1860684318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac9afa2d5b635f4f93498a332467320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1245778277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34572,6 +34589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba400cc15ba05684a80aa19ec3d28ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joystick: {fileID: 1860684320}
+  space: {fileID: 1860684319}
   newAnimatorController: {fileID: 9100000, guid: eb9955b5d72a09244b19d880f6011ac9,
     type: 2}
   over: {fileID: 1471777067}
@@ -38724,6 +38743,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 622896809a613874080a67e483afe105, type: 3}
+--- !u!114 &1860684319 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1582049442, guid: 622896809a613874080a67e483afe105,
+    type: 3}
+  m_PrefabInstance: {fileID: 1860684318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac9afa2d5b635f4f93498a332467320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1860684320 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2929252283183035930, guid: 622896809a613874080a67e483afe105,
+    type: 3}
+  m_PrefabInstance: {fileID: 1860684318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1862238519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4881226026202341945, guid: 23b0d712d975e8942970a62d74cc190c,

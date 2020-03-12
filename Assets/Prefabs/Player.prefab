@@ -334,7 +334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac9afa2d5b635f4f93498a332467320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressed: 0
 --- !u!1 &1541740462
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +497,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac9afa2d5b635f4f93498a332467320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressed: 0
 --- !u!1 &1738487528
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +583,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac9afa2d5b635f4f93498a332467320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressed: 0
 --- !u!1 &1961096545
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +823,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac9afa2d5b635f4f93498a332467320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressed: 0
 --- !u!1 &1894657491560730423
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,7 +909,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac9afa2d5b635f4f93498a332467320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressed: 0
 --- !u!1 &5541653398133637536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,6 +1513,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 459375448407260448, guid: 7ee5a5bfb4f6539459fc8599645c8593,
+        type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 972336992690377811}
     - target: {fileID: 4431128310935872367, guid: 7ee5a5bfb4f6539459fc8599645c8593,
         type: 3}
       propertyPath: joystick

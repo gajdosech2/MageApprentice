@@ -9,7 +9,7 @@ public class HideGUI : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Submit") || enter.pressed)
+        if (Input.GetButtonDown("Submit") || enter.GetDown())
         {
             hint.SetActive(false);
         }

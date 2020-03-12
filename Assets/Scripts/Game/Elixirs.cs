@@ -6,6 +6,7 @@ public enum Types { red, green, blue, white, none };
 
 public class Elixirs : MonoBehaviour
 {
+    public JoyButton X;
     public static Elixirs instance;
     public List<GameObject> slot1_elixirs;
     public List<GameObject> slot2_elixirs;
@@ -88,7 +89,7 @@ public class Elixirs : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) || X.GetDown())
         {
             Types temp = player_slot1;
             player_slot1 = player_slot2;

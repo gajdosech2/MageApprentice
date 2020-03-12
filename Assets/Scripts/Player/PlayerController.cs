@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public JoyButton menu;
     float distance_to_ground = 0.0f;
 
     [HideInInspector]
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = 30;
         }
-        Cursor.visible = false;
+        //Cursor.visible = false;
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         collider = GetComponent<Collider>();
@@ -59,9 +60,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void LateUpdate()
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M) || menu.GetDown())
         {
             ManagerGame.Menu();
         }
