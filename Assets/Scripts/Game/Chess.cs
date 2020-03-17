@@ -17,7 +17,6 @@ public class Chess : MonoBehaviour
     public GameObject pickups;
 
     public Transform player;
-    public CameraController camera;
     public UnityEvent OnActivate;
     public List<Light> lights;
 
@@ -35,6 +34,7 @@ public class Chess : MonoBehaviour
     float rotation_lerp = 1.0f;
     float move_lerp = 0.0f;
     Vector3 start_position = Vector3.zero;
+    Camera active_camera;
 
     void Start()
     {
@@ -43,6 +43,7 @@ public class Chess : MonoBehaviour
             Destroy(instance.gameObject);
         }
         instance = this;
+        active_camera = player.GetComponentInChildren<Camera>();
     }
 
     public bool Free(int row, int col)
@@ -75,14 +76,17 @@ public class Chess : MonoBehaviour
     {
         player_text.SetActive(!enemy_turn);
         enemy_text.SetActive(enemy_turn);
+
+        active_camera.enabled = false;
         if (enemy_turn)
         {
-            camera.target = enemies[active_enemy].transform;
+            active_camera = enemies[active_enemy].GetComponentInChildren<Camera>();
         }
         else
         {
-            camera.target = player;
+            active_camera = player.GetComponentInChildren<Camera>();
         }
+        active_camera.enabled = true;
     }
 
     public void Enemy()
