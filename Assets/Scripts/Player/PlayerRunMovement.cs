@@ -10,7 +10,6 @@ public class PlayerRunMovement : MonoBehaviour
     public GameObject over;
 
     Ball ball;
-    CameraController camera;
     RuntimeAnimatorController oldAnimatorController;
     Animator animator;
     PlayerMovement normal_movement;
@@ -23,7 +22,6 @@ public class PlayerRunMovement : MonoBehaviour
 
     void Start()
     {
-        camera = Camera.main.GetComponent<CameraController>();
         ball = GameObject.Find("Ball").GetComponent<Ball>();
         animator = GetComponent<Animator>();
         oldAnimatorController = animator.runtimeAnimatorController;
@@ -59,12 +57,14 @@ public class PlayerRunMovement : MonoBehaviour
     void Go()
     {
         on_run = true;
-        camera.target = transform;
+        GameObject.Find("Camera Run Begin").GetComponent<Camera>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Camera>().enabled = true;
     }
 
     void Done()
     {
-        camera.target = transform;
+        GameObject.Find("Camera Run Done").GetComponent<Camera>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Camera>().enabled = true;
     }
 
     void OnTriggerEnter(Collider other)
@@ -76,7 +76,10 @@ public class PlayerRunMovement : MonoBehaviour
             transform.rotation = Quaternion.identity;
             animator.runtimeAnimatorController = newAnimatorController;
             ball.enabled = true;
-            camera.target = GameObject.Find("CameraTargetOne").transform;
+
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Camera>().enabled = false;
+            GameObject.Find("Camera Run Begin").GetComponent<Camera>().enabled = true;
+
             Invoke("Go", 4.0f);
         }
         else if (other.gameObject.name.Equals("End"))
@@ -86,7 +89,9 @@ public class PlayerRunMovement : MonoBehaviour
             on_run = false;
             normal_movement.enabled = true;
             animator.runtimeAnimatorController = oldAnimatorController;
-            camera.target = GameObject.Find("CameraTargetTwo").transform;
+
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Camera>().enabled = false;
+            GameObject.Find("Camera Run Done").GetComponent<Camera>().enabled = true;
             Invoke("Done", 4.0f);
         }
         else if (other.gameObject.layer == 9)
