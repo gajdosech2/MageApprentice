@@ -24,7 +24,8 @@ public class PlayerController : MonoBehaviour
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = 30;
         }
-        //Cursor.visible = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         collider = GetComponent<Collider>();

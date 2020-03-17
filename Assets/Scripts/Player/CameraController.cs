@@ -129,4 +129,9 @@ public class CameraController : MonoBehaviour
 
         UpdateMaterialTransparency();
     }
+
+    void OnDestroy()
+    {
+        fadeMaterial.color = Color.white;
+    }
 }

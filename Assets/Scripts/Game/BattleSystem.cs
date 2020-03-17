@@ -56,7 +56,6 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-
         player_controller.move_direction = Vector3.zero;
         player_movement.enabled = false;
         player_controller.transform.rotation = transform.rotation;
@@ -72,6 +71,7 @@ public class BattleSystem : MonoBehaviour
         enemy_exclamation.SetActive(false);
         gui.SetActive(true);
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         enemy_health.value = enemy_health.maxValue;
         text.text = "Wild " + enemy_name + " appeared!";
         text.gameObject.SetActive(true);
@@ -195,6 +195,7 @@ public class BattleSystem : MonoBehaviour
         camera.offset = old_offset;
         gui.SetActive(false);
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         Destroy(enemy_unit.gameObject);
         OnActivate.Invoke();
     }
