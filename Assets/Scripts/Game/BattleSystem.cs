@@ -10,7 +10,7 @@ public class BattleSystem : MonoBehaviour
     private float lerp = 0.0f;
     private float new_health;
 
-    private CameraController camera;
+    //private CameraController camera;
     private BattleUnit player_unit;
     private Transform player_transform;
     private PlayerController player_controller;
@@ -30,7 +30,7 @@ public class BattleSystem : MonoBehaviour
     public Button heal_button;
     public Slider player_health;
     public Slider enemy_health;
-    
+
     void Start()
     {
         GameObject player = GameObject.Find("MageCharacter");
@@ -39,7 +39,7 @@ public class BattleSystem : MonoBehaviour
         player_controller = player.GetComponent<PlayerController>();
         player_unit = player.GetComponent<BattleUnit>();
         player_animator = player.GetComponent<Animator>();
-        camera = Camera.main.GetComponent<CameraController>();
+        //camera = Camera.main.GetComponent<CameraController>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -59,13 +59,13 @@ public class BattleSystem : MonoBehaviour
         player_controller.move_direction = Vector3.zero;
         player_movement.enabled = false;
         player_controller.transform.rotation = transform.rotation;
-        old_offset = camera.offset;
-        Vector3 new_offset = camera.offset - new Vector3(2.0f, 0.25f, 0.0f);
+        //old_offset = camera.offset;
+        //Vector3 new_offset = camera.offset - new Vector3(2.0f, 0.25f, 0.0f);
         enemy_exclamation.SetActive(true);
         while (lerp < 1.0f)
         {
             lerp += 0.5f * Time.deltaTime;
-            camera.offset = Vector3.Lerp(old_offset, new_offset, lerp);
+            //camera.offset = Vector3.Lerp(old_offset, new_offset, lerp);
             yield return null;
         }
         enemy_exclamation.SetActive(false);
@@ -123,7 +123,7 @@ public class BattleSystem : MonoBehaviour
         else
         {
             StartCoroutine("EnemyTurn");
-        } 
+        }
     }
 
     public void OnHealButton()
@@ -147,7 +147,7 @@ public class BattleSystem : MonoBehaviour
         player_health.value = new_health;
         player_animator.SetInteger("State", 0);
         yield return new WaitForSeconds(1.5f);
-        text.gameObject.SetActive(false); 
+        text.gameObject.SetActive(false);
         StartCoroutine("EnemyTurn");
     }
 
@@ -173,7 +173,7 @@ public class BattleSystem : MonoBehaviour
         }
         player_health.value = new_health;
         bool dead = player_health.value <= 0;
-        yield return new WaitForSeconds(1.5f); 
+        yield return new WaitForSeconds(1.5f);
         if (dead)
         {
             over.SetActive(true);
@@ -192,7 +192,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         player_movement.enabled = true;
         player_controller.enabled = true;
-        camera.offset = old_offset;
+        //camera.offset = old_offset;
         gui.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

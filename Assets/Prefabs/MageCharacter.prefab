@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1664465936841911892}
   - component: {fileID: 4605607941501712838}
+  - component: {fileID: 3520942351056320349}
   m_Layer: 0
   m_Name: Eye
   m_TagString: Untagged
@@ -49,6 +50,24 @@ MonoBehaviour:
   smoothness: 0.5
   minTilt: -70
   maxTilt: 70
+--- !u!114 &3520942351056320349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434908006849124186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daa8c052b8e90bc409ad88807ab3e91c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: c805af27b738e394989b29f718f5c17e, type: 2}
+  camera: {fileID: 3846564165015596294}
+  fadeStartDistance: 0.9
+  fadeEndDistance: 0.7
+  fadeMinOpacity: 0.1
+  fadeMaxOpacity: 1
 --- !u!1 &5271867273647031145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,7 +2598,7 @@ GameObject:
   - component: {fileID: 1620048183788395155}
   - component: {fileID: 3846564165015596294}
   - component: {fileID: 3438756640675745876}
-  - component: {fileID: 9187464657735834253}
+  - component: {fileID: 6019118531242550954}
   m_Layer: 0
   m_Name: Third Person Camera
   m_TagString: MainCamera
@@ -2651,7 +2670,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7635764627561439095}
   m_Enabled: 1
---- !u!114 &9187464657735834253
+--- !u!114 &6019118531242550954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2663,10 +2682,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68baf35e976b61a4e825c64ebabf7994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
-  fadeMaterial: {fileID: 2100000, guid: c805af27b738e394989b29f718f5c17e, type: 2}
-  fadeStartDistance: 1
-  fadeEndDistance: 0.7
-  fadeMinOpacity: 0.1
-  zoomoutSmooth: 0.9
+  zoomoutSmooth: 0.8
