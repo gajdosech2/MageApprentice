@@ -1,12 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuScripts : MonoBehaviour
 {
     public GameObject menu;
     public GameObject challenges;
     public GameObject settings;
+
+    public void Awake()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 
     public void MainMenu()
     {
@@ -28,7 +35,7 @@ public class MenuScripts : MonoBehaviour
 
     public void LoadLevel(string level)
     {
-        Application.LoadLevel(level);
+        SceneManager.LoadScene(level);
     }
 
     public void Exit()
