@@ -23,11 +23,15 @@ public class PlayerChessMovement : MonoBehaviour
     float start_rotation = -45;
 
     PlayerMovement normal_movement;
+    ControlledCharacterRotation normal_rotation;
+    ControlledVerticalLook vertical_look;
     PlayerController player;
 
     void Start()
     {
         normal_movement = GetComponent<PlayerMovement>();
+        normal_rotation = GetComponent<ControlledCharacterRotation>();
+        vertical_look = GetComponentInChildren<ControlledVerticalLook>();
         player = GetComponent<PlayerController>();
     }
 
@@ -97,7 +101,7 @@ public class PlayerChessMovement : MonoBehaviour
                     Chess.instance.Switch();
                 }
             }
-            else 
+            else
             {
                 Move();
             }
@@ -108,18 +112,22 @@ public class PlayerChessMovement : MonoBehaviour
     {
         on_chessboard = false;
         normal_movement.enabled = true;
+        normal_rotation.enabled = true;
+        vertical_look.SetLockedToDefaultRotation(false);
         Chess.instance.gui.SetActive(false);
     }
 
-	void OnTriggerEnter(Collider other)
-	{
-		if (other.gameObject.name.Equals("ChessBoard") && start == false)
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name.Equals("ChessBoard") && start == false)
         {
             on_chessboard = true;
             normal_movement.enabled = false;
+            normal_rotation.enabled = false;
+            vertical_look.SetLockedToDefaultRotation(true);
             transform.rotation = Quaternion.Euler(0, 45, 0);
             player.move_direction = Vector3.zero;
             start_position = transform.position;
         }
-	}
+    }
 }

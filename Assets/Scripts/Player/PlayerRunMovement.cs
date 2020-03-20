@@ -13,6 +13,8 @@ public class PlayerRunMovement : MonoBehaviour
     RuntimeAnimatorController oldAnimatorController;
     Animator animator;
     PlayerMovement normal_movement;
+    ControlledCharacterRotation normal_rotation;
+    ControlledVerticalLook vertical_look;
     PlayerController player;
     CharacterController controller;
 
@@ -26,6 +28,8 @@ public class PlayerRunMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         oldAnimatorController = animator.runtimeAnimatorController;
         normal_movement = GetComponent<PlayerMovement>();
+        normal_rotation = GetComponent<ControlledCharacterRotation>();
+        vertical_look = GetComponentInChildren<ControlledVerticalLook>();
         player = GetComponent<PlayerController>();
         controller = GetComponent<CharacterController>();
     }
@@ -50,7 +54,7 @@ public class PlayerRunMovement : MonoBehaviour
         }
 
         player.move_direction.z = (controller.transform.forward * move_speed).z;
-        player.move_direction.x = Input.GetAxis("Horizontal") * 5 + joystick.Horizontal * 5; 
+        player.move_direction.x = Input.GetAxis("Horizontal") * 5 + joystick.Horizontal * 5;
         controller.Move(player.move_direction * Time.deltaTime);
     }
 
@@ -72,6 +76,8 @@ public class PlayerRunMovement : MonoBehaviour
         if (other.gameObject.name.Equals("Run"))
         {
             normal_movement.enabled = false;
+            normal_rotation.enabled = false;
+            vertical_look.SetLockedToDefaultRotation(true);
             player.move_direction = Vector3.zero;
             transform.rotation = Quaternion.identity;
             animator.runtimeAnimatorController = newAnimatorController;
@@ -88,6 +94,8 @@ public class PlayerRunMovement : MonoBehaviour
             GameObject.Find("Cell").GetComponent<Animator>().SetInteger("State", 1);
             on_run = false;
             normal_movement.enabled = true;
+            normal_rotation.enabled = true;
+            vertical_look.SetLockedToDefaultRotation(false);
             animator.runtimeAnimatorController = oldAnimatorController;
 
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Camera>().enabled = false;

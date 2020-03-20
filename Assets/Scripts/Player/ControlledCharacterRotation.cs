@@ -10,25 +10,30 @@ public class ControlledCharacterRotation : MonoBehaviour
 
     public float smoothness = 0.5f;
 
-    float rotationHorizontal = 0.0f;
-    float targetRotationHorizontal = 0.0f;
+    float rotationX = 0.0f;
+    float targetRotationX = 0.0f;
 
     void Start()
     {
-        rotationHorizontal = transform.rotation.y;
+        rotationX = targetRotationX = transform.rotation.eulerAngles.y;
+    }
+
+    void OnEnable()
+    {
+        rotationX = targetRotationX = transform.rotation.eulerAngles.y;
     }
 
     void Update()
     {
         //float axis_input = Input.GetAxis("Horizontal") + joystick.Horizontal + Input.GetAxis("Mouse X");
         float axis_input = Input.GetAxis("Mouse X");
-        targetRotationHorizontal += axis_input * sensitivity * Time.deltaTime;
+        targetRotationX += axis_input * sensitivity * Time.deltaTime;
 
-        float prev_rotation = rotationHorizontal;
-        rotationHorizontal = Mathf.Lerp(targetRotationHorizontal, rotationHorizontal, smoothness);
+        float prev_rotation = rotationX;
+        rotationX = Mathf.Lerp(targetRotationX, rotationX, smoothness);
 
         Vector3 rotation = transform.eulerAngles;
-        rotation.y = rotationHorizontal;
+        rotation.y = rotationX;
         transform.eulerAngles = rotation;
     }
 }

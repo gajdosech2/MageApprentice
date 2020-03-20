@@ -137,8 +137,8 @@ public class Chess : MonoBehaviour
             int new_diff_col = Mathf.Abs(col - player_col);
 
             if ((diff_row == 1 && diff_col == 1) ||
-                ((new_diff_row != 1 || new_diff_col != 1) &&
-                (new_diff_row + new_diff_col < diff_row + diff_col)))
+                    ((new_diff_row != 1 || new_diff_col != 1) &&
+                     (new_diff_row + new_diff_col < diff_row + diff_col)))
             {
                 active_enemy = i;
             }
@@ -222,6 +222,10 @@ public class Chess : MonoBehaviour
     {
         if (Input.GetButton("Submit") || enter.GetDown())
         {
+            foreach (Light light in lights)
+            {
+                light.intensity = 4;
+            }
             info.SetActive(false);
         }
         if (enemy_turn)
@@ -241,7 +245,7 @@ public class Chess : MonoBehaviour
             {
                 int new_row = player_row + i;
                 int new_col = player_col + j;
-                
+
                 if (new_row < 0 || new_row > 8 || new_col < 0 || new_col > 8)
                 {
                     continue;
@@ -265,16 +269,16 @@ public class Chess : MonoBehaviour
     {
         int player_row = (int)(player.position.z / TILE_SIZE);
         int player_col = (int)(player.position.x / TILE_SIZE);
-        if ((player_row == 0 && player_col == 0) || 
-            (player_row == 8 && player_col == 8) ||
-            (player_row == 0 && player_col == 8) ||
-            (player_row == 8 && player_col == 0))
+        if ((player_row == 0 && player_col == 0) ||
+                (player_row == 8 && player_col == 8) ||
+                (player_row == 0 && player_col == 8) ||
+                (player_row == 8 && player_col == 0))
         {
             end = true;
             pickups.SetActive(false);
             foreach(Light light in lights)
             {
-                light.intensity = 4;
+                light.intensity = 0;
             }
             OnActivate.Invoke();
             OnActivate.RemoveAllListeners();
