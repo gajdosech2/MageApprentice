@@ -10,14 +10,11 @@ public class BattleSystem : MonoBehaviour
     private float lerp = 0.0f;
     private float new_health;
 
-    private BattleUnit player_unit;
-    private Transform player_transform;
+    private PlayerInterface player;
+
     private PlayerController player_controller;
-    private PlayerMovement player_movement;
-    private ControlledCharacterRotation player_rotation;
-    private ControlledVerticalLook player_vertical;
     private Animator player_animator;
-    private Camera player_camera;
+
     private Camera battle_camera;
     private Animator battle_camera_animator;
 
@@ -37,15 +34,11 @@ public class BattleSystem : MonoBehaviour
 
     void Start()
     {
-        GameObject player = GameObject.Find("MageCharacter");
-        player_transform = player.transform;
-        player_movement = player.GetComponent<PlayerMovement>();
-        player_rotation = player.GetComponent<ControlledCharacterRotation>();
-        player_vertical = player.GetComponentInChildren<ControlledVerticalLook>();
-        player_controller = player.GetComponent<PlayerController>();
-        player_unit = player.GetComponent<BattleUnit>();
-        player_animator = player.GetComponent<Animator>();
-        player_camera = player.GetComponentInChildren<Camera>();
+        player = GameObject.Find("Player").GetComponent<PlayerInterface>();
+
+        player_controller = player.character.GetComponent<PlayerController>();
+        player_animator = player.character.GetComponent<Animator>();
+
         battle_camera = GetComponentInChildren<Camera>();
         battle_camera_animator = battle_camera.GetComponent<Animator>();
     }
@@ -65,18 +58,15 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-        player_movement.enabled = false;
-        player_rotation.enabled = false;
-        player_vertical.SetLockedToDefaultRotation(true);
+        player.SetControlsEnabled(false);
 
         player_controller.move_direction = Vector3.zero;
-        player_movement.transform.rotation = transform.rotation;
-        player_movement.transform.position = transform.Find("Stepper Player").transform.position;
+        player.character.transform.rotation = transform.rotation;
+        player.character.transform.position = transform.Find("Stepper Player").transform.position;
 
         enemy_exclamation.SetActive(true);
 
-        player_camera.enabled = false;
-        battle_camera.enabled = true;
+        player.SetTemporaryCamera(battle_camera);
         battle_camera_animator.SetTrigger("BattleStart");
 
         yield return new WaitForSeconds(2.0f);
@@ -205,11 +195,8 @@ public class BattleSystem : MonoBehaviour
         text.gameObject.SetActive(true);
         yield return new WaitForSeconds(2.0f);
 
-        battle_camera.enabled = false;
-        player_camera.enabled = true;
-        player_movement.enabled = true;
-        player_rotation.enabled = true;
-        player_vertical.SetLockedToDefaultRotation(false);
+        player.RestorePlayerCamera();
+        player.SetControlsEnabled(true);
         player_controller.enabled = true;
         gui.SetActive(false);
         Cursor.visible = false;

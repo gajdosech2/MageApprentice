@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class ControlledMovement : MonoBehaviour
 {
     public FixedJoystick joystick;
     public JoyButton space;

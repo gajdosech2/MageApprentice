@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControlledCharacterRotation : MonoBehaviour
+public class ControlledRotation : MonoBehaviour
 {
     public FixedJoystick joystick;
 

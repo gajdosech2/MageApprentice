@@ -22,17 +22,13 @@ public class PlayerChessMovement : MonoBehaviour
     float rotation_lerp = 1.0f;
     float start_rotation = -45;
 
-    PlayerMovement normal_movement;
-    ControlledCharacterRotation normal_rotation;
-    ControlledVerticalLook vertical_look;
-    PlayerController player;
+    PlayerInterface player;
+    PlayerController player_controller;
 
     void Start()
     {
-        normal_movement = GetComponent<PlayerMovement>();
-        normal_rotation = GetComponent<ControlledCharacterRotation>();
-        vertical_look = GetComponentInChildren<ControlledVerticalLook>();
-        player = GetComponent<PlayerController>();
+        player = GameObject.Find("Player").GetComponent<PlayerInterface>();
+        player_controller = GetComponent<PlayerController>();
     }
 
     bool Bounds()
@@ -47,11 +43,11 @@ public class PlayerChessMovement : MonoBehaviour
 
     void Move()
     {
-        player.move_direction = Vector3.zero;
+        player_controller.move_direction = Vector3.zero;
 
         if (move_lerp < 1.0f)
         {
-            player.move_direction.x = 1.0f;
+            player_controller.move_direction.x = 1.0f;
             move_lerp += move_speed * Time.deltaTime;
             transform.position = Vector3.Lerp(start_position, start_position + transform.forward * MOVE_DISTANCE, move_lerp);
             if (move_lerp >= 1.0f)
@@ -111,9 +107,7 @@ public class PlayerChessMovement : MonoBehaviour
     void Leave()
     {
         on_chessboard = false;
-        normal_movement.enabled = true;
-        normal_rotation.enabled = true;
-        vertical_look.SetLockedToDefaultRotation(false);
+        player.SetControlsEnabled(true);
         Chess.instance.gui.SetActive(false);
     }
 
@@ -122,11 +116,9 @@ public class PlayerChessMovement : MonoBehaviour
         if (other.gameObject.name.Equals("ChessBoard") && start == false)
         {
             on_chessboard = true;
-            normal_movement.enabled = false;
-            normal_rotation.enabled = false;
-            vertical_look.SetLockedToDefaultRotation(true);
+            player.SetControlsEnabled(false);
             transform.rotation = Quaternion.Euler(0, 45, 0);
-            player.move_direction = Vector3.zero;
+            player_controller.move_direction = Vector3.zero;
             start_position = transform.position;
         }
     }
