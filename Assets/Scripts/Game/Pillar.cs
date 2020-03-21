@@ -33,7 +33,7 @@ public class Pillar : MonoBehaviour
 
     bool Free()
     {
-        Vector3 pos = start_position + dir + Vector3.up;
+        Vector3 pos = start_position + dir + Vector3.up/4;
         return Physics.OverlapSphere(pos, 0.1f, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore).Length == 0;
     }
 

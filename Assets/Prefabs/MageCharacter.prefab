@@ -1969,8 +1969,8 @@ GameObject:
   - component: {fileID: 5271867273646816511}
   - component: {fileID: 5271867273637688141}
   - component: {fileID: 6895527065573206834}
-  - component: {fileID: 3403781824667609875}
   - component: {fileID: 3225832278701501811}
+  - component: {fileID: 5759093434456253399}
   - component: {fileID: 459375448407260448}
   - component: {fileID: 620597566}
   - component: {fileID: 1394211460}
@@ -2037,20 +2037,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.8, z: 0}
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5271867273647132495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a646cf24ac52d1419cf67dc2e1bde37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  joystick: {fileID: 0}
-  sensitivity: 100
-  smoothness: 0.5
 --- !u!114 &3225832278701501811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2068,6 +2054,21 @@ MonoBehaviour:
   moveSpeed: 5
   jumpSpeed: 10
   gravity: 17
+--- !u!114 &5759093434456253399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271867273647132495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a646cf24ac52d1419cf67dc2e1bde37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  sensitivity: 100
+  smoothness: 0.5
 --- !u!114 &459375448407260448
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class GameOver : MonoBehaviour
         PlayerInterface player = GameObject.Find("Player").GetComponent<PlayerInterface>();
         player_collector = player.character.GetComponent<PlayerCollector>();
         PlayerController controller = player.character.GetComponent<PlayerController>();
+        player.SetControlsEnabled(false, false);
         controller.move_direction = Vector3.zero;
         controller.enabled = false;
         player.character.GetComponent<Animator>().SetInteger("State", 3);

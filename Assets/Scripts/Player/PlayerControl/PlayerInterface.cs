@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerInterface : MonoBehaviour
 {
-
     public Transform character;
-    new public Camera camera;
+    public Camera camera;
 
     ControlledMovement movementControl;
     ControlledRotation rotationControl;
@@ -23,11 +22,18 @@ public class PlayerInterface : MonoBehaviour
         verticalViewControl = GetComponentInChildren<ControlledVerticalLook>();
     }
 
-    public void SetControlsEnabled(bool enabled)
+    public void SetControlsEnabled(bool enabled, bool lockCam = true)
     {
         movementControl.enabled = enabled;
         rotationControl.enabled = enabled;
-        verticalViewControl.SetLockedToDefaultRotation(!enabled);
+        if (lockCam)
+        {
+            verticalViewControl.SetLockedToDefaultRotation(!enabled);
+        }
+        else
+        {
+            verticalViewControl.SetLocked(!enabled);
+        }
     }
 
     public void SetTemporaryCamera(Camera new_camera)
@@ -50,7 +56,4 @@ public class PlayerInterface : MonoBehaviour
         }
         camera.enabled = true;
     }
-
-
-
 }

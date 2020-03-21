@@ -200,7 +200,11 @@ public class BattleSystem : MonoBehaviour
         gui.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        Destroy(enemy_unit.gameObject);
+        if (enemy_unit != null)
+        {
+            Destroy(enemy_unit.gameObject);
+            enemy_unit = null;
+        }
         OnActivate.Invoke();
     }
 }

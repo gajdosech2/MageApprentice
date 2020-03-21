@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class CameraDistanceCorrector : MonoBehaviour
 {
     public float zoomoutSmooth = 0.8f;
@@ -17,7 +15,7 @@ public class CameraDistanceCorrector : MonoBehaviour
     void Start()
     {
         cam = GetComponent<Camera>();
-        // warning: camera rotation must be zero, otherwise script does not work properly
+        // warning: scene camera rotation must be zero, otherwise script does not work properly
         cam.transform.rotation = Quaternion.identity;
 
         local_target = new Vector3(transform.localPosition.x, transform.localPosition.y, 0);
@@ -25,7 +23,6 @@ public class CameraDistanceCorrector : MonoBehaviour
 
         near_plane_extents.y = cam.nearClipPlane * Mathf.Tan(Mathf.Deg2Rad * cam.fieldOfView * 0.5f);
         near_plane_extents.x = near_plane_extents.y * cam.aspect;
-
     }
 
     float GetSafeDistance()
@@ -64,5 +61,4 @@ public class CameraDistanceCorrector : MonoBehaviour
 
         transform.localPosition = local_target + new Vector3(0, 0, -current_distance);
     }
-
 }

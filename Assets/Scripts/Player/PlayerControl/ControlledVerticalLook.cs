@@ -11,21 +11,18 @@ public class ControlledVerticalLook : MonoBehaviour
     public float minTilt = -70.0f;
     public float maxTilt = 70.0f;
 
-    float rotationY = 0.0f;
-    float targetRotationY = 0.0f;
-    float defaultRotationY = 20.0f;
+    float rotationY, targetRotationY, defaultRotationY;
 
     bool isLocked = false;
 
     void Start()
     {
-        rotationY = targetRotationY = defaultRotationY = transform.rotation.eulerAngles.x;
-        defaultRotationY = 20.0f;
+        defaultRotationY = targetRotationY = 20.0f;
     }
 
     void OnEnable()
     {
-        rotationY = targetRotationY = defaultRotationY = transform.rotation.eulerAngles.x;
+        rotationY = targetRotationY = transform.rotation.eulerAngles.x;
     }
 
     void UpdateTargetRotation()
@@ -42,11 +39,16 @@ public class ControlledVerticalLook : MonoBehaviour
         {
             UpdateTargetRotation();
         }
-        rotationY = Mathf.Lerp(targetRotationY, rotationY, smoothness);
+        rotationY = Mathf.Lerp(rotationY, targetRotationY, smoothness);
 
         Vector3 rotation = transform.eulerAngles;
         rotation.x = rotationY;
         transform.eulerAngles = rotation;
+    }
+
+    public void SetLocked(bool is_locked)
+    {
+        isLocked = is_locked;
     }
 
     public void SetLockedToDefaultRotation(bool is_locked)

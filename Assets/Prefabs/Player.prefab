@@ -1118,6 +1118,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+--- !u!114 &2929252283183035930 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
+  m_PrefabInstance: {fileID: 95963109}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2929252283183035927 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
@@ -1243,12 +1255,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0173e8a41980ce43b92b8ff1d88409b, type: 3}
---- !u!224 &5541653397765683599 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6468998049078137910, guid: e0173e8a41980ce43b92b8ff1d88409b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1522664261415316921}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5541653398295714186 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6468998049549464627, guid: e0173e8a41980ce43b92b8ff1d88409b,
@@ -1261,6 +1267,12 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &5541653397765683599 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6468998049078137910, guid: e0173e8a41980ce43b92b8ff1d88409b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1522664261415316921}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5541653398133578285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1287,11 +1299,6 @@ PrefabInstance:
       propertyPath: space
       value: 
       objectReference: {fileID: 1582049442}
-    - target: {fileID: 3403781824667609875, guid: 7ee5a5bfb4f6539459fc8599645c8593,
-        type: 3}
-      propertyPath: joystick
-      value: 
-      objectReference: {fileID: 2929252283183035930}
     - target: {fileID: 5271867273646816511, guid: 7ee5a5bfb4f6539459fc8599645c8593,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1352,6 +1359,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MageCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 5759093434456253399, guid: 7ee5a5bfb4f6539459fc8599645c8593,
+        type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 2929252283183035930}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ee5a5bfb4f6539459fc8599645c8593, type: 3}
 --- !u!20 &8756780937399170859 stripped

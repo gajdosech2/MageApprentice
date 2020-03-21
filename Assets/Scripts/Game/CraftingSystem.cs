@@ -14,14 +14,19 @@ public class CraftingSystem : MonoBehaviour
     [HideInInspector]
     public bool process = false;
 
-    public PlayerMovement movement;
+    private PlayerInterface player;
+
+    void Start()
+    {
+        player = GameObject.Find("Player").GetComponent<PlayerInterface>();
+    }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
             gui.SetActive(!gui.activeSelf);
-            movement.enabled = !gui.activeSelf;
+            player.SetControlsEnabled(!gui.activeSelf, false);
             Cursor.visible = gui.activeSelf;
             Cursor.lockState = gui.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
         }
