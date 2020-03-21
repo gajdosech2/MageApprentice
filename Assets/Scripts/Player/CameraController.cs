@@ -46,14 +46,14 @@ public class CameraController : MonoBehaviour
     float max_distance;
     float current_distance;
     Vector3 local_target;
-    Vector2 near_plane_extents = new Vector2();
+    Vector2 near_plane_extents = Vector2.zero;
     bool is_material_opaque = true;
 
     void Start()
     {
         cam = GetComponent<Camera>();
         // warning: camera rotation must be zero, otherwise script does not work properly
-        cam.transform.rotation = new Quaternion();
+        cam.transform.rotation = Quaternion.identity;
 
         local_target = new Vector3(transform.localPosition.x, transform.localPosition.y, 0);
         max_distance = current_distance = -transform.localPosition.z;

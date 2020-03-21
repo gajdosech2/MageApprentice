@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
 
     Transform eye;
 
-
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -67,8 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Rotate()
     {
-        //float axis_input = Input.GetAxis("Horizontal") + joystick.Horizontal + Input.GetAxis("Mouse X");
-        float axis_input = Input.GetAxis("Mouse X");
+        float axis_input = Input.GetAxis("Horizontal") + joystick.Horizontal + Input.GetAxis("Mouse X");
         targetRotationHorizontal += axis_input * sensitivityHor * Time.deltaTime;
 
         float prev_rotation = rotationHorizontal;
