@@ -13,13 +13,14 @@ public class ControlledVerticalLook : MonoBehaviour
 
     float rotationY = 0.0f;
     float targetRotationY = 0.0f;
-    float defaultRotationY = 0.0f;
+    float defaultRotationY = 20.0f;
 
     bool isLocked = false;
 
     void Start()
     {
         rotationY = targetRotationY = defaultRotationY = transform.rotation.eulerAngles.x;
+        defaultRotationY = 20.0f;
     }
 
     void OnEnable()

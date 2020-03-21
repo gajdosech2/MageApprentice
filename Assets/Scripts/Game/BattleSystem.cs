@@ -11,7 +11,6 @@ public class BattleSystem : MonoBehaviour
     private float new_health;
 
     private PlayerInterface player;
-
     private PlayerController player_controller;
     private Animator player_animator;
 

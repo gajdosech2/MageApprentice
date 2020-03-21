@@ -222,10 +222,6 @@ public class Chess : MonoBehaviour
     {
         if (Input.GetButton("Submit") || enter.GetDown())
         {
-            foreach (Light light in lights)
-            {
-                light.intensity = 4;
-            }
             info.SetActive(false);
         }
         if (enemy_turn)
@@ -278,7 +274,7 @@ public class Chess : MonoBehaviour
             pickups.SetActive(false);
             foreach(Light light in lights)
             {
-                light.intensity = 0;
+                light.intensity = 4;
             }
             OnActivate.Invoke();
             OnActivate.RemoveAllListeners();

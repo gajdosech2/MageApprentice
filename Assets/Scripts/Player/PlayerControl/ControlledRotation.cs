@@ -25,8 +25,7 @@ public class ControlledRotation : MonoBehaviour
 
     void Update()
     {
-        //float axis_input = Input.GetAxis("Horizontal") + joystick.Horizontal + Input.GetAxis("Mouse X");
-        float axis_input = Input.GetAxis("Mouse X");
+        float axis_input = Input.GetAxis("Horizontal") + joystick.Horizontal + Input.GetAxis("Mouse X");
         targetRotationX += axis_input * sensitivity * Time.deltaTime;
 
         float prev_rotation = rotationX;
