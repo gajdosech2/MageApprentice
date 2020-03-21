@@ -10,12 +10,12 @@ public class GameOver : MonoBehaviour
 
     void Start()
     {
-        GameObject mage = GameObject.Find("MageCharacter");
-        player_collector = mage.GetComponent<PlayerCollector>();
-        mage.GetComponent<PlayerMovement>().enabled = false;
-        mage.GetComponent<PlayerController>().move_direction = Vector3.zero;
-        mage.GetComponent<PlayerController>().enabled = false;
-        mage.GetComponent<Animator>().SetInteger("State", 3);
+        PlayerInterface player = GameObject.Find("Player").GetComponent<PlayerInterface>();
+        player_collector = player.character.GetComponent<PlayerCollector>();
+        PlayerController controller = player.character.GetComponent<PlayerController>();
+        controller.move_direction = Vector3.zero;
+        controller.enabled = false;
+        player.character.GetComponent<Animator>().SetInteger("State", 3);
     }
 
     void Update()
