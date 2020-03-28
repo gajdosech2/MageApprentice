@@ -40,7 +40,7 @@ public class CraftingSystem : MonoBehaviour
         }
         foreach (CraftingItem item in items)
         {
-            if (item.piece == piece)
+            if (item.piece == piece && item.equip.activeSelf)
             {
                 return true;
             }
@@ -50,12 +50,12 @@ public class CraftingSystem : MonoBehaviour
 
     public void StartCrafting()
     {
-        Uncheck();
+        Block();
         foreach (CraftingItem item in items)
         {
             if ((int)item.piece < 3)
             {
-                item.interact = true;
+                item.status = State.Craft;
             }
         }
         craft1.active.SetActive(true);
@@ -64,12 +64,12 @@ public class CraftingSystem : MonoBehaviour
 
     public void StartDecompose()
     {
-        Uncheck();
+        Block();
         foreach (CraftingItem item in items)
         {
             if ((int)item.piece > 2 && item.piece != Piece.Empty)
             {
-                item.interact = true;
+                item.status = State.Craft;
             }
         }
         decomp.active.SetActive(true);
@@ -103,12 +103,13 @@ public class CraftingSystem : MonoBehaviour
         }
     }
 
-    public void Uncheck()
+    public void Block()
     {
         foreach (CraftingItem item in items)
         {
-            item.interact = false;
+            item.status = State.Block;
             item.active.SetActive(false);
+            item.equip.SetActive(false);
         }
         craft1.piece = Piece.Empty;
         craft2.piece = Piece.Empty;
@@ -116,6 +117,18 @@ public class CraftingSystem : MonoBehaviour
         craft1.active.SetActive(false);
         craft2.active.SetActive(false);
         decomp.active.SetActive(false);
+    }
+
+    public void Usable()
+    {
+        Block();
+        foreach (CraftingItem item in items)
+        {
+            if ((int)item.piece > 2 && item.piece != Piece.Empty)
+            {
+                item.status = State.Use;
+            }
+        }
     }
 
     public void Interact(Piece piece)
@@ -169,7 +182,7 @@ public class CraftingSystem : MonoBehaviour
         {
             AddItem(Piece.Torch);
         }
-        Uncheck();
+        Usable();
         process = false;
     }
 
@@ -205,7 +218,7 @@ public class CraftingSystem : MonoBehaviour
                 AddItem(Piece.Cloth);
                 break;
         }
-        Uncheck();
+        Usable();
         process = false;
     }
 }

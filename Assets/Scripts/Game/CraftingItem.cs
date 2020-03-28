@@ -24,20 +24,36 @@ public enum Type
     Decompose
 }
 
+public enum State
+{
+    Craft,
+    Block,
+    Use
+}
+
+
 public class CraftingItem : MonoBehaviour, IPointerDownHandler
 {
     public CraftingSystem system;
+    public GameObject equip;
     public GameObject active;
     public GameObject[] pieces;
     public Piece piece;
     public Type type;
 
     [HideInInspector]
-    public bool interact;
+    public State status;
 
     void Start()
     {
-        interact = !(type == Type.Normal);
+        if (type == Type.Normal)
+        {
+            status = State.Block;
+        }
+        else
+        {
+            status = State.Craft;
+        }
     }
 
     void Update()
@@ -58,9 +74,10 @@ public class CraftingItem : MonoBehaviour, IPointerDownHandler
         {
             return;
         }
-        if (!interact)
+        if (status != State.Craft)
         {
-            system.Uncheck();
+            system.Usable();
+            equip.SetActive(status == State.Use);
         }
         else if (type == Type.Decompose)
         {
